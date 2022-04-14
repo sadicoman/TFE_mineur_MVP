@@ -4,7 +4,7 @@
 
 /* Navigation Menu */
 .header{
-    padding: 20px;
+    padding-top: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px 20px;
@@ -14,21 +14,28 @@
 /* Main */
 .grid{
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 18px 8px;
     padding: 0px 18px;
-    margin-bottom: 136px;
+    // margin-bottom: 100px;
+}
+.section__div{
+    padding: 15px 15px 130px 15px;
+    align-items: end
 }
 .grid > *{
     grid-column: 1 / -1;
 }
 
+.mgrid-start{
+    grid-column-start: 1;
+}
 // .mgrid-start2{
 //     grid-column-start: 2;
 // }
-// .mgrid-start3{
-//     grid-column-start: 3;
-// }
+.mgrid-start3{
+    grid-column-start: 3;
+}
 // .mgrid-start4{
 //     grid-column-start: 4;
 // }
@@ -38,16 +45,25 @@
 // .mgrid-end2{
 //     grid-column-end: 2;
 // }
-// .mgrid-end3{
-//     grid-column-end: 3;
-// }
+.mgrid-end3{
+    grid-column-end: 3;
+}
 // .mgrid-end4{
 //     grid-column-end: 4;
 // }
-
+.mgrid-end{
+    grid-column-end: -1;
+}
+.mgridRow-start{
+    grid-row-start: 1;
+}
+.mgridRow-end3{
+    grid-row-end: 3;
+}
 
 
 @media screen and (min-width: 768px) {
+
 	/* Main */
     // .grid {
     //     grid-template-columns: 1fr 2fr 1fr 2fr;
@@ -100,15 +116,21 @@
     .grid{
         grid-template-columns: repeat(7, 1fr);
         grid-gap: 36px 54px;
-        margin-bottom: 5em;
+        margin-bottom: 0;
         padding: 0;
     }
-    .main{
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 30px;
-        align-items: center;
+    .section__div {
+        align-items: start;
     }
+    .btn__container{
+        align-self: center;
+    }
+    // .main{
+    //     display: grid;
+    //     grid-template-columns: repeat(5, 1fr);
+    //     grid-gap: 30px;
+    //     align-items: center;
+    // }
     // .grid > *{
     //     grid-column: 2 / 5;
     // }
@@ -131,9 +153,9 @@
     // .pgrid-start5{
     //     grid-column-start: 5;
     // }
-    // .pgrid-start6{
-    //     grid-column-start: 6;
-    // }
+    .pgrid-start6{
+        grid-column-start: 6;
+    }
     // .pgrid-start7{
     //     grid-column-start: 7;
     // }
@@ -161,4 +183,10 @@
     // .pgridRow-start1{
     //     grid-row-start: 1;
     // }
+    .pgridRow-end2{
+        grid-row-end: 2;
+    }
+    .pgridRow-start2{
+        grid-row-start: 2;
+    }
 }

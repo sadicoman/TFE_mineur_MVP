@@ -1,4 +1,4 @@
-/*
+/* ===============================================================
  * LAYOUT
 ** =============================================================== */
 
@@ -14,7 +14,9 @@
 	max-width: 450px;
 	margin: auto;
 }
-
+.header__img{
+	padding-left: 18px;	
+}
 /* BTN */
 .btn{
 	width: 100%;
@@ -24,6 +26,7 @@
     margin-top: 18px;
     background-color: var(--color-primary);
 	color: var(--color-on-primary);
+	border: none;
     padding: 20px 20px 20px 20px;
 	font-size: 1.2em;
 	text-align: center;
@@ -62,19 +65,101 @@
 	left: 10px;
 } 
 
-
+/* SVG */
+.personnage{
+	width: 100%;
+}
 .logo--dwt{
 	width: 50%;
 	cursor: pointer;
 }
-
-
 .svg--pc{
 	display: none;
 }
+.halo{
+	filter: blur(15px);
+  }
+.flame{
+filter: blur(1px);
+}
+
+.svg__Morph{
+	width: 100%;
+}
+
+
+
+/* Classe projet Section Swap */
+.grid.section--displayNone{
+	display: none;
+}
+.section--opacity{
+	opacity: 0;
+}
+.section--displayNone.section--displayVisible{
+	display: grid;
+}
+
+.bulle{
+	display: block;
+    // width: 70%;
+    background: #EEEEEE;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.bulle::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    border-color: transparent #EEEEEE transparent transparent;
+    position: absolute;
+    bottom: 10px;
+    left: -17px;
+}
+.section__div{
+	background-image: url("../images/Background_perso.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+.hidden{
+	display: none;
+  }
+  .solCharbon, .sol{
+	fill: #855439;
+  }
+  .sable{
+	fill: #DA895D;
+  } 
+  .sable2{
+	fill: #855439;
+  } 
+  .sol2{
+	fill: #DA895D;
+  }
+
+
+
+
 
 @media screen and (min-width: 768px) {
-	
+	.main, .header{
+		max-width: 768px;
+		margin: auto;
+	}
+	.bulle{
+		align-self: start;
+		width: 70%;
+	}
 }
 
 @media screen and (min-width: 1440px) {
@@ -90,5 +175,16 @@
 	}	
 	.logo--dwt {
 		width: 30%;
+	}
+	.bulle{
+		align-self: start;
+		width: 40%;
+		padding-left: 15px;
+	}
+	.bulle__content{
+		margin-top: 1.5em;;
+	}
+	.header__img {
+		padding-left: 0px;
 	}
 }
