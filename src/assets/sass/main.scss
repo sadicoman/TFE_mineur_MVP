@@ -1,0 +1,39 @@
+/*!
+***
+* TFE Mineur Project
+***
+* Projet scolaire pour mon TFE de B2G2
+* option DWT
+*
+* @version: 1.0
+* @author: François Szczepkowski <francois.szcz@hotmail.fr>
+*
+***
+*/
+
+@use "_normalize.scss";
+@use "_type.scss";
+@use "_layout.scss";
+@use "_grid.scss";
+@use "_list.scss";
+@use "_var.scss" as v;
+
+.lien{
+    text-decoration: none; 
+    color: #000;
+}
+.lien:visited{
+    color: var(--color-primary-visited);
+}
+.lien:hover, .lien:focus{
+    color: var(--color-primary-hover-variant);
+}
+
+
+
+/**
+* = TODO
+*
+* 
+*
+* ========================================================== */

@@ -1,0 +1,94 @@
+/*
+ * LAYOUT
+** =============================================================== */
+
+@use "_var.scss";
+
+/* HEADER */
+
+/* Main */
+.section:last-child{
+    margin-bottom: 72px;
+}
+.main, .header{
+	max-width: 450px;
+	margin: auto;
+}
+
+/* BTN */
+.btn{
+	width: 100%;
+	position: relative;
+}
+.btn__el{
+    margin-top: 18px;
+    background-color: var(--color-primary);
+	color: var(--color-on-primary);
+    padding: 20px 20px 20px 20px;
+	font-size: 1.2em;
+	text-align: center;
+	letter-spacing: 1.3px;
+}
+.btn__el--haut{
+	position: absolute;
+	z-index: 10;
+}
+.btn__span{
+	display: flex;
+    align-items: center;
+}
+.btn__span--icone::after {
+	content: url(../images/pioche.png);
+	padding-left: 15px;
+}
+.btn__el--haut:hover, .btn__el--haut:focus{
+	transform: translate(10px, 10px);
+	background-color: var(--color-secondary);
+	color: var(--color-on-secondary);
+	transition-duration: .2s;
+	transition-timing-function: ease-out;
+		
+	.btn__span--icone:after {
+		content: url(../images/pioche_hover.png);
+	}
+}
+.btn__el--bas{
+	position: absolute;
+	margin-top: 18px;
+	background-color: var(--color-secondary);
+	// width: 215px;
+	// height: 37px;
+	top: 10px;
+	left: 10px;
+} 
+
+
+.logo--dwt{
+	width: 50%;
+	cursor: pointer;
+}
+
+
+.svg--pc{
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	
+}
+
+@media screen and (min-width: 1440px) {
+	.svg--pc{
+		display: inherit;
+	}
+	.svg--mb{
+		display: none;
+	}
+	.main, .header{
+		max-width: 1440px;
+		margin: auto;
+	}	
+	.logo--dwt {
+		width: 30%;
+	}
+}

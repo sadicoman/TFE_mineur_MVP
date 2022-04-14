@@ -1,0 +1,56 @@
+/*
+ * VARIZBLES
+** =============================================================== */
+
+/* Color and DarkTheme */
+:root{
+	--color-primary:			  #1E09B1;;
+	--color-secondary:			  #D3AA2B;;
+	--color-error:				  #FF0000;
+	--color-primary-hover:		  #99c41a;
+	--color-primary-visited:	  #001e5b;
+	--color-ligne:				  #CCCCCC;
+	--color-on-primary:			  #fff;
+	--color-on-secondary:		  #000000;
+	--color-on-background:		  #000000;
+	--color-on-error:			  #000000;
+	--color-on-primary-hover:	  #000000;
+}
+// [data-theme="light"]{
+// 	--color-primary:			  #06B131;
+// 	--color-primary-variant:	  #069E2D;
+// 	--color-secondary:			  #058E3F;
+// 	--color-secondary-variant:	  #04773B;
+// 	--color-error:				  #FF0000;
+// 	--color-primary-hover:		  #99c41a;
+// 	--color-primary-hover-variant:#003117;
+// 	--color-primary-hover-menu:	  #016832;
+// 	--color-ligne:				  #CCCCCC;
+// 	--color-primary-visited:	  #001e5b;
+// 	--color-on-primary:			  #000000;
+// 	--color-on-secondary:		  #000000;
+// 	--color-on-background:		  #000000;
+// 	--color-on-error:			  #000000;
+// 	--color-on-primary-hover:	  #000000;   
+// }
+
+// [data-theme="dark"]{
+// 	--color-primary:			#06B131;
+// 	--color-primary-variant:	#069E2D;
+// 	--color-secondary:			#058E3F;
+// 	--color-secondary-variant:	#04773B;
+// 	--color-error:				#FF0000;
+// 	--color-primary-hover:		#B6EA20;
+// 	--color-primary-hover-menu:	#B6EA20;
+// 	--color-primary-visited:	#001e5b;
+// 	--color-ligne:				#04773B;
+// 	--color-on-primary:			#000000;
+// 	--color-on-secondary:		#000000;
+// 	--color-on-background:		#ffffff;
+// 	--color-on-error:			#000000;
+// 	--color-on-primary-hover:	#000000;   
+// }
+
+/* Type */
+$font-text: 'Roboto', sans-serif;
+$font-title:'Holtwood One SC', serif;

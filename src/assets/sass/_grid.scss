@@ -1,0 +1,164 @@
+/*
+ * GRILLES CSS
+** =============================================================== */
+
+/* Navigation Menu */
+.header{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px 20px;
+}
+
+
+/* Main */
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 18px 8px;
+    padding: 0px 18px;
+    margin-bottom: 136px;
+}
+.grid > *{
+    grid-column: 1 / -1;
+}
+
+// .mgrid-start2{
+//     grid-column-start: 2;
+// }
+// .mgrid-start3{
+//     grid-column-start: 3;
+// }
+// .mgrid-start4{
+//     grid-column-start: 4;
+// }
+// .mgrid-start5{
+//     grid-column-start: 5;
+// }
+// .mgrid-end2{
+//     grid-column-end: 2;
+// }
+// .mgrid-end3{
+//     grid-column-end: 3;
+// }
+// .mgrid-end4{
+//     grid-column-end: 4;
+// }
+
+
+
+@media screen and (min-width: 768px) {
+	/* Main */
+    // .grid {
+    //     grid-template-columns: 1fr 2fr 1fr 2fr;
+    //     grid-gap: 18px 18px;
+    // }
+    // .grid > *{
+    //     grid-column: 1 / 4;
+    // }
+    // .grid .footer__el, .grid .el__telechargement, .grid .icone__el > *{
+    //     grid-column: 1 / -1;
+    // }
+    // .tgrid-start1{
+    //     grid-column-start: 1;
+    // }
+    // .tgrid-start2{
+    //     grid-column-start: 2;
+    // }
+    // .tgrid-start3{
+    //     grid-column-start: 3;
+    // }
+    // .tgrid-start4{
+    //     grid-column-start: 4;
+    // }
+    // .tgrid-end2{
+    //     grid-column-end: 2;
+    // }
+    // .tgrid-end3{
+    //     grid-column-end: 3;
+    // }
+    // .tgrid-end4{
+    //     grid-column-end: 4;
+    // }
+    // .tgrid-end{
+    //     grid-column-end: -1;
+    // }
+    // .tgridRow-start1{
+    //     grid-row-start: 1;
+    // }
+    // .tgridRow-start2{
+    //     grid-row-start: 2;
+    // }
+    // .tgridRow-end5{
+    //     grid-row-end: 5;
+    // }
+    
+    
+}
+
+@media screen and (min-width: 1440px) {
+    .grid{
+        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 36px 54px;
+        margin-bottom: 5em;
+        padding: 0;
+    }
+    .main{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 30px;
+        align-items: center;
+    }
+    // .grid > *{
+    //     grid-column: 2 / 5;
+    // }
+    // .header > *{
+    //     grid-column: 1 / -1;
+    //     align-self:center;
+    // }
+    .pgrid-start1{
+        grid-column-start: 1;
+    }
+    // .pgrid-start2{
+    //     grid-column-start: 2;
+    // }
+    .pgrid-start3{
+        grid-column-start: 3;
+    }
+    // .pgrid-start4{
+    //     grid-column-start: 4;
+    // }
+    // .pgrid-start5{
+    //     grid-column-start: 5;
+    // }
+    // .pgrid-start6{
+    //     grid-column-start: 6;
+    // }
+    // .pgrid-start7{
+    //     grid-column-start: 7;
+    // }
+    // .pgrid-end2{
+    //     grid-column-end: 2;
+    // }
+    .pgrid-end3{
+        grid-column-end: 3;
+    }
+    // .pgrid-end4{
+    //     grid-column-end: 4;
+    // }
+    // .pgrid-end5{
+    //     grid-column-end: 5;
+    // }
+    .pgrid-end6{
+        grid-column-end: 6;
+    }
+    // .pgrid-end7{
+    //     grid-column-end: 7;
+    // }
+    // .pgrid-end8{
+    //     grid-column-end: 8;
+    // }
+    // .pgridRow-start1{
+    //     grid-row-start: 1;
+    // }
+}

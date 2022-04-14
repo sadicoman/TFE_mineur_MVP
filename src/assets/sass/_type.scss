@@ -1,0 +1,123 @@
+/*
+ * TYPOGRAPHIES
+** =============================================================== */
+
+@use "_var.scss" as v;
+
+/* Import font-face Text*/
+@font-face {
+    font-family: 'Roboto';
+    font-display: swap;
+    src: url(../fonts/Roboto-Bold.woff) format("woff"),
+    url(../fonts/Roboto-Bold.woff2) format("woff2"),
+    url(../fonts/Roboto-Bold.ttf) format("ttf");
+
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-display: swap;
+    src: url(../fonts/Roboto-BoldItalic.woff) format("woff"),
+    url(../fonts/Roboto-BoldItalic.woff2) format("woff2"),
+    url(../fonts/Roboto-BoldItalic.ttf) format("ttf");
+    font-weight: bold;
+    font-style:  italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-display: swap;
+    src: url(../fonts/Roboto-Regular.woff) format("woff"),
+    url(../fonts/Roboto-Regular.woff2) format("woff2"),
+    url(../fonts/Roboto-Regular.ttf) format("ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-display: swap;
+    src: url(../fonts/Roboto-Italic.woff) format("woff"),
+    url(../fonts/Roboto-Italic.woff2) format("woff2"),
+    url(../fonts/Roboto-Italic.ttf) format("ttf");
+    font-weight: normal;
+    font-style:  italic;
+}
+
+/* Import font-face Titre*/
+@font-face {
+    font-family: 'Holtwood One SC';
+    font-display: swap;
+    src: url(../fonts/HoltwoodOneSC-Regular.woff) format("woff"),
+    url(../fonts/HoltwoodOneSC-Regular.woff2) format("woff2"),
+    url(../fonts/HoltwoodOneSC-Regular.ttf) format("ttf");
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+.body{
+    font-family: v.$font-text;
+    font-size: 18px;
+    line-height: 1.5;
+    color:var(--color-on-background);
+    background-color: #ECECEE;
+}
+/* BODY Dark*/
+body[data-theme="dark"] {
+    background: radial-gradient(circle, #045D10 0%, #03440C 100%);
+    color: var(--color-on-background);
+	.rectangle--background{
+		background: radial-gradient(circle, #045D10 0%, #03440C 100%);
+	}
+}
+ 
+/* Styles des TITRES */
+.title{
+    font-size: 1.5em;
+    font-family: v.$font-title;
+}
+// .title--h2{
+//     font-size: 1.5em;
+// }
+// .title--h3{
+//     font-size: 1.2222222222222223em;
+// }
+
+/* Main */
+.bold{
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+    .title{
+        font-size: 2em;
+    }
+    .title--h2{
+        font-size: 1.4em;
+    }
+    .title--h3{
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .body{
+        font-size: 1.3em; 
+    }
+    .title{
+        font-size:2em;
+        width: 90%;
+    }
+    .title--h2{
+        font-size: 2em;
+    }
+    .title--h3{
+        font-size: 1.6em;
+    }
+}
