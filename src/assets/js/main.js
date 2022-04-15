@@ -131,6 +131,8 @@ tlHalo.to(halo,{
 /*----- Annimation Swap SVG Création Charbon -----*/
 let btnSuivant = document.querySelector('.btnSuivant');
 let btnAvant = document.querySelector('.btnAvant');
+let pgCharbon = document.querySelector('.pg__creaCharbon');
+let btnSwap = document.querySelector('.btn--swap');
 let etapes1 = document.querySelectorAll('.etape1');
 let etapes2 = document.querySelectorAll('.etape2');
 let etapes3 = document.querySelectorAll('.etape3');
@@ -147,18 +149,22 @@ btnSuivant.addEventListener('click', (e) => {
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes2[i]});
     };
     btnAvant.classList.toggle('hidden');
+    pgCharbon.innerHTML ="Ensuite, des affaissements du sol et invasions par les eaux ont créé des marécages. Les végétaux moururent petit à petit.";
   }else if(index == 2){
     for(let i = 0 ; i < etapes1.length ; i++){
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes3[i]});
     };
+    pgCharbon.innerHTML ="Ainsi, à l’abri de l’air commence la fermentation de divers dépôts végétaux. Avec le temps, les divers végétaux s’enrichissent en carbone et les autres substances disparaissent !";
   }else if(index == 3){
     for(let i = 0 ; i < etapes1.length ; i++){
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes4[i]});
     };
+    pgCharbon.innerHTML ="Sur la couche végétale se déposent des sédiments et de la terre, qui formeront le nouveau sol où la nature va pouvoir se reconstituer.";
   }else if(index == 4){
     for(let i = 0 ; i < etapes1.length ; i++){
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes5[i]});
     };
+    pgCharbon.innerHTML ="L’eau va petit à petit se retirer des terres, la végétation pourra reprendre ses droits et repousser !";
    for(let sableDeux of sable){
       sableDeux.classList.add('sable2');
     };
@@ -170,6 +176,8 @@ btnSuivant.addEventListener('click', (e) => {
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes6[i]});
     };
     btnSuivant.classList.toggle('hidden');
+    pgCharbon.innerHTML ="Le cycle se renouvellera, ce qui constituera plusieurs couches de charbon avec le temps.";
+    btnSwap.classList.toggle('hidden');
   }
   index++;
 });
@@ -180,18 +188,22 @@ btnAvant.addEventListener('click', (e) => {
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes1[i]});
     };
     btnAvant.classList.toggle('hidden');
+    pgCharbon.innerHTML ="Au commencement, il y avait de magnifiques forêts avec des végétaux à perte de vue.";
   }else if(index == 3){
     for(let i = 0 ; i < etapes1.length ; i++){
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes2[i]});
     };
+    pgCharbon.innerHTML ="Ensuite, des affaissements du sol et invasions par les eaux ont créé des marécages. Les végétaux moururent petit à petit.";
   }else if(index == 4){
     for(let i = 0 ; i < etapes1.length ; i++){
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes3[i]});
     };
+    pgCharbon.innerHTML ="Ainsi, à l’abri de l’air commence la fermentation de divers dépôts végétaux. Avec le temps, les divers végétaux s’enrichissent en carbone et les autres substances disparaissent !";
   }else if(index == 5){
     for(let i = 0 ; i < etapes1.length ; i++){
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes4[i]});
     };
+    pgCharbon.innerHTML ="Sur la couche végétale se déposent des sédiments et de la terre, qui formeront le nouveau sol où la nature va pouvoir se reconstituer.";
     for(let sableDeux of sable){
       sableDeux.classList.remove('sable2');
     };
@@ -202,7 +214,60 @@ btnAvant.addEventListener('click', (e) => {
     for(let i = 0 ; i < etapes1.length ; i++){
       gsap.to(etapes1[i], {duration: 1, morphSVG: etapes5[i]});
     };
+    pgCharbon.innerHTML ="L’eau va petit à petit se retirer des terres, la végétation pourra reprendre ses droits et repousser !";
     btnSuivant.classList.toggle('hidden');
+    btnSwap.classList.toggle('hidden');
   }
   index--;
+});
+/*--------------------------------------------*/
+
+/*----- Swap Style charbon -----*/
+let btnSwap2 = document.querySelector('.btn--swap2');
+let btnAvantCharbon = document.querySelector('.btnAvant--styleCharbon');
+let btnSuivantCharbon = document.querySelector('.btnSuivant--styleCharbon');
+let styleCharbon = document.querySelectorAll('.styleCharbon__el');
+
+// suivant
+// btnSuivantCharbon.addEventListener('click', (e) => {
+//   for(let i = 0 ; i < styleCharbon.length ; i++){
+//     // styleCharbon[i].classList.remove('hidden');
+//     // styleCharbon[i].classList.add('hidden');
+//     // styleCharbon[i].classList.remove('hidden');
+//     styleCharbon[i].classList.remove('hidden');
+//     styleCharbon[i+i++].classList.add('hidden');
+//   };
+// });
+
+// Avant
+// btnAvantCharbon.addEventListener('click', (e) => {
+//   for(let i = 0 ; i < styleCharbon.length ; i++){
+//     styleCharbon[i].classList.add('hidden');
+//   };
+// });
+
+
+let charbonIndex = 0;
+
+// suivant
+btnSuivantCharbon.addEventListener('click', (e) => {
+    styleCharbon[charbonIndex].classList.add('hidden');
+    styleCharbon[charbonIndex + 1].classList.remove('hidden');
+    btnAvantCharbon.classList.remove('hidden');
+    charbonIndex++;
+    if(charbonIndex == styleCharbon.length - 1){
+        btnSwap2.classList.remove('hidden');
+        btnSuivantCharbon.classList.add('hidden');
+    }
+});
+
+// Avant
+btnAvantCharbon.addEventListener('click', (e) => {
+    styleCharbon[charbonIndex].classList.add('hidden');
+    styleCharbon[charbonIndex - 1].classList.remove('hidden');
+    btnSwap2.classList.add('hidden');
+    charbonIndex--;
+    if(charbonIndex == 0){
+        btnAvantCharbon.classList.add('hidden');
+    }
 });

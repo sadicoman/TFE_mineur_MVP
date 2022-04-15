@@ -10,6 +10,11 @@
     grid-gap: 20px 20px;
 }
 
+.btn--fleche{
+    background-color: inherit;
+    border: inherit;
+}
+
 
 /* Main */
 .grid{
@@ -108,7 +113,9 @@
     // .tgridRow-end5{
     //     grid-row-end: 5;
     // }
-    
+    .pg__creaCharbon{
+        width: 70%;
+    }
     
 }
 
@@ -141,9 +148,9 @@
     .pgrid-start1{
         grid-column-start: 1;
     }
-    // .pgrid-start2{
-    //     grid-column-start: 2;
-    // }
+    .pgrid-start2{
+        grid-column-start: 2;
+    }
     .pgrid-start3{
         grid-column-start: 3;
     }
@@ -174,9 +181,9 @@
     .pgrid-end6{
         grid-column-end: 6;
     }
-    // .pgrid-end7{
-    //     grid-column-end: 7;
-    // }
+    .pgrid-end7{
+        grid-column-end: 7;
+    }
     // .pgrid-end8{
     //     grid-column-end: 8;
     // }
