@@ -8,7 +8,7 @@
 
 /* Main */
 .section:last-child{
-    margin-bottom: 72px;
+	margin-bottom: 72px;
 }
 .main, .header{
 	max-width: 450px;
@@ -23,7 +23,7 @@
 	position: relative;
 }
 .btn__el{
-    margin-top: 18px;
+	margin-top: 18px;
     background-color: var(--color-primary);
 	color: var(--color-on-primary);
 	border: none;
@@ -50,7 +50,7 @@
 	color: var(--color-on-secondary);
 	transition-duration: .2s;
 	transition-timing-function: ease-out;
-		
+	
 	.btn__span--icone:after {
 		content: url(../images/pioche_hover.png);
 	}
