@@ -162,7 +162,17 @@ filter: blur(1px);
 }
 
 
+.btn--espace{
+	margin-bottom: 125px;
+}
+
+
+
+
 @media screen and (min-width: 768px) {
+	.btn--espace{
+		margin-bottom: 0px;
+	}
 	.main, .header{
 		max-width: 768px;
 		margin: auto;
@@ -177,9 +187,15 @@ filter: blur(1px);
 	.header__img {
 		padding-left: 30px;
 	}
+	.section--displayNone.section--displayVisible{
+		margin-bottom: 2em;
+	}
 }
 
 @media screen and (min-width: 1440px) {
+	// .body{
+	// 	height: 100vh;
+	// }
 	.svg--pc{
 		display: inherit;
 	}
@@ -187,8 +203,9 @@ filter: blur(1px);
 		display: none;
 	}
 	.main, .header{
-		max-width: 1440px;
+		max-width: 1400px;
 		margin: auto;
+		padding: 0px 10px;
 	}	
 	.logo--dwt {
 		width: 30%;
@@ -204,4 +221,13 @@ filter: blur(1px);
 	.header__img {
 		padding-left: 0px;
 	}
+	.section--displayNone.section--displayVisible{
+		margin-bottom: 1em;
+	}
+	.personnage{
+		max-height: 720px;
+	}
+	// .mine{
+	// 	max-height: 750px;
+	// }
 }

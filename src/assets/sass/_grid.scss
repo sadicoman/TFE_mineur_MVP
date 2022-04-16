@@ -127,15 +127,17 @@
 @media screen and (min-width: 1440px) {
     .grid{
         grid-template-columns: repeat(7, 1fr);
-        grid-gap: 36px 54px;
+        grid-gap: 16px 54px;
         margin-bottom: 0;
         padding: 0;
     }
     .section__div {
         align-items: start;
+        // padding-bottom: 50px;
     }
     .btn__container{
         align-self: center;
+        padding-bottom: 20px;
     }
     // .main{
     //     display: grid;
@@ -159,9 +161,9 @@
     .pgrid-start3{
         grid-column-start: 3;
     }
-    // .pgrid-start4{
-    //     grid-column-start: 4;
-    // }
+    .pgrid-start4{
+        grid-column-start: 4;
+    }
     .pgrid-start5{
         grid-column-start: 5;
     }
@@ -177,9 +179,9 @@
     .pgrid-end3{
         grid-column-end: 3;
     }
-    // .pgrid-end4{
-    //     grid-column-end: 4;
-    // }
+    .pgrid-end4{
+        grid-column-end: 4;
+    }
     .pgrid-end5{
         grid-column-end: 5;
     }
