@@ -105,31 +105,31 @@ function prev(){
 
 /*----- Annimation personnage -----*/
 const tlBras = gsap.timeline({repeat: -1, yoyo: true});
-tlBras.set(brasMobile,{
+tlBras.set(".brasMobile",{
   transformOrigin: '75px 20px',
   rotation: '-1deg'
 });
-tlBras.to(brasMobile,{
+tlBras.to(".brasMobile",{
   duration: 4,
   rotation: '7deg',
   ease: "power1.inOut"
 });
 
 const tlFlame = gsap.timeline({repeat: -1, yoyo: true});
-tlFlame.set(flame,{
+tlFlame.set(".flame",{
   transformOrigin: 'center center'
 })
-tlFlame.to(flame,{
+tlFlame.to(".flame",{
   duration: 1.5,
   scale: 1.3,
   ease: "bounce.inOut"
 });
 
 const tlHalo = gsap.timeline({repeat: -1, yoyo: true});
-tlHalo.set(halo,{
+tlHalo.set(".halo",{
   transformOrigin: 'center center'
 })
-tlHalo.to(halo,{
+tlHalo.to(".halo",{
   duration: 1.5,
   scale: 1.6,
   ease: "bounce.inOut"
@@ -252,13 +252,16 @@ btnSuivantCharbon.addEventListener('click', (e) => {
 
 // Arriere
 btnAvantCharbon.addEventListener('click', (e) => {
-    styleCharbon[charbonIndex].classList.add('hidden');
-    styleCharbon[charbonIndex - 1].classList.remove('hidden');
-    btnSwap2.classList.add('hidden');
-    charbonIndex--;
-    if(charbonIndex == 0){
-        btnAvantCharbon.classList.add('hidden');
-    }
+  styleCharbon[charbonIndex].classList.add('hidden');
+  styleCharbon[charbonIndex - 1].classList.remove('hidden');
+  btnSwap2.classList.add('hidden');
+  if(btnSuivantCharbon.classList.contains('hidden')){
+    btnSuivantCharbon.classList.remove('hidden');
+  }
+  charbonIndex--;
+  if(charbonIndex == 0){
+      btnAvantCharbon.classList.add('hidden');
+  }
 });
 /*--------------------------------------------*/
 
