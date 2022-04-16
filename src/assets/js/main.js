@@ -236,26 +236,6 @@ let btnSwap2 = document.querySelector('.btn--swap2');
 let btnAvantCharbon = document.querySelector('.btnAvant--styleCharbon');
 let btnSuivantCharbon = document.querySelector('.btnSuivant--styleCharbon');
 let styleCharbon = document.querySelectorAll('.styleCharbon__el');
-
-// suivant
-// btnSuivantCharbon.addEventListener('click', (e) => {
-//   for(let i = 0 ; i < styleCharbon.length ; i++){
-//     // styleCharbon[i].classList.remove('hidden');
-//     // styleCharbon[i].classList.add('hidden');
-//     // styleCharbon[i].classList.remove('hidden');
-//     styleCharbon[i].classList.remove('hidden');
-//     styleCharbon[i+i++].classList.add('hidden');
-//   };
-// });
-
-// Avant
-// btnAvantCharbon.addEventListener('click', (e) => {
-//   for(let i = 0 ; i < styleCharbon.length ; i++){
-//     styleCharbon[i].classList.add('hidden');
-//   };
-// });
-
-
 let charbonIndex = 0;
 
 // suivant
@@ -270,7 +250,7 @@ btnSuivantCharbon.addEventListener('click', (e) => {
     }
 });
 
-// Avant
+// Arriere
 btnAvantCharbon.addEventListener('click', (e) => {
     styleCharbon[charbonIndex].classList.add('hidden');
     styleCharbon[charbonIndex - 1].classList.remove('hidden');
@@ -280,3 +260,101 @@ btnAvantCharbon.addEventListener('click', (e) => {
         btnAvantCharbon.classList.add('hidden');
     }
 });
+/*--------------------------------------------*/
+
+
+/*----- SVG Presentation Mine annimation -----*/
+const tlRoue = gsap.timeline({repeat: -1, yoyo: true});
+tlRoue.set(".roue",{
+  duration: 6,
+  rotation: -180,
+  transformOrigin: 'center',
+  ease: "power2.inOut"
+});
+tlRoue.to(".roue", {
+  duration: 6, 
+  rotation: 180,  
+  transformOrigin: 'center',
+  ease: "power2.inOut"
+});
+
+gsap.to(".berline", {
+  duration: 10, 
+  x: 100, 
+  yoyo: true, 
+  // transformOrigin: 'center', 
+  repeat: -1,
+  ease: 'linear',
+});
+gsap.to(".berline2", {
+  duration: 10, 
+  x: -100, 
+  yoyo: true, 
+  // transformOrigin: 'center', 
+  repeat: -1,
+  ease: 'linear',
+});
+
+gsap.to(".skip", {
+  duration: 6, 
+  y: -130, 
+  yoyo: true, 
+  // transformOrigin: 'center', 
+  repeat: -1,
+  ease: "power2.inOut",
+});
+/*--------------------------------------------*/
+
+/*----- SVG Présentation du circuit d'aérage Annimation -----*/
+gsap.to(".roue2", {
+  duration: 3, 
+  rotation: 360,  
+  transformOrigin: 'center', 
+  repeat: -1,
+  ease: 'linear',
+});
+
+gsap.to(".airHaut", {
+  duration: 3,  
+  y: -50,
+  opacity: 0,
+  // transformOrigin: 'center', 
+  repeat: -1,
+  ease: 'linear',
+});
+gsap.to(".airHaut2", {
+  duration: 2.5,  
+  y: -20,
+  opacity: 0,
+  // transformOrigin: 'center', 
+  repeat: -1,
+  ease: 'linear',
+});
+gsap.to(".airBas", {
+  duration: 3,  
+  y: 50,
+  opacity: 0,
+  // transformOrigin: 'center', 
+  repeat: -1,
+  ease: 'linear',
+});
+
+gsap.to(".airDroit", {
+  duration: 3,  
+  x: 85,
+  opacity: 0,
+  // transformOrigin: 'center', 
+  repeat: -1,
+  ease: 'linear',
+});
+gsap.to(".airDroit2", {
+  duration: 4.2,  
+  x: 50,
+  opacity: 0,
+  // transformOrigin: 'center', 
+  repeat: -1,
+  ease: 'linear',
+});
+/*--------------------------------------------*/
+
+
