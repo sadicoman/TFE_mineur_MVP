@@ -204,3 +204,25 @@
         grid-row-start: 2;
     }
 }
+
+
+@media (min-width: 1440px) and (min-height: 700px) { 
+	.btn__container--aerage{
+        align-self: center;
+        padding-bottom: 0px;
+        margin-top: 180px;
+    }
+    .btn__container{
+        padding-bottom: 65px;
+    }
+}
+
+@media (min-width: 1440px) and (min-height: 900px) { 
+    .btn__container--aerage{
+        padding-bottom: 0px;
+        margin-top: 0px;
+    }
+    .btn__container{
+        padding-bottom: 15px;
+    }
+}
