@@ -1,23 +1,5 @@
 "use strict";
 
-/*----- Copyright -----*/
-// if (document.getElementById("year")) {
-// let date = new Date().getFullYear(); 
-
-// document.getElementById("year").innerHTML = date;    
-// }
-/*--------------------------------------------*/
-
-
-/*----- Annimation GSAP -----*/
-// gsap.to( '.ball', {
-//     x: 300,
-//     stagger: 0.08,
-//     duration: 1
-// } );
-/*--------------------------------------------*/
-
-
 /*----- Btn -----*/
 let btnTaille = document.querySelectorAll(".btn");
 let btnTailleHaut = document.querySelectorAll(".btn__el--haut");
@@ -361,3 +343,32 @@ gsap.to(".airDroit2", {
 /*--------------------------------------------*/
 
 
+/*----- FUNCTION SOUND -----*/
+var mySound;
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.classList.add('myAudio');
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+      console.log('play');
+    }
+    this.stop = function(){
+      this.sound.pause();
+      console.log('stop');
+    }
+    this.remove = function(){
+      this.sound.remove();
+      console.log('remove');
+    }
+    this.volume = function(){
+      this.sound.volume();
+    }
+}
+// mySound = new sound("assets/sound/voix/narrateur-1.mp3");
+// mySound.play();
+/*--------------------------------------------*/
