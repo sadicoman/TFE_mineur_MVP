@@ -372,3 +372,25 @@ function sound(src) {
 // mySound = new sound("assets/sound/voix/narrateur-1.mp3");
 // mySound.play();
 /*--------------------------------------------*/
+
+
+
+/*----- Bulle dialogue annimation -----*/
+const tlDia = gsap.timeline({});
+    tlDia.set('.dia-1',{
+        opacity: 0
+    });
+    tlDia.set('.dia-2',{
+        opacity: 0
+    });
+    tlDia.to('.dia-1',{
+      opacity: 1,
+      duration: 1, 
+      ease: 'linear'
+    });
+    tlDia.to('.dia-2',{
+        opacity: 1,
+        duration: 0.8, 
+        ease: 'linear',
+        delay: 2.5
+    });
