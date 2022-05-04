@@ -373,6 +373,58 @@ function sound(src) {
 // mySound.play();
 /*--------------------------------------------*/
 
+/*----- Son BTN -----*/
+let btnHistoireCharbon = document.querySelector('.btn--histoireCharbon');
+let son = document.querySelectorAll('.son');
+let btnStylesCharbon = document.querySelector('.btn--stylesCharbon');
+
+for(let sonCouper of son){
+  sonCouper.addEventListener('click', (e) => {
+    if (mySound.pause) {
+      mySound.play();
+      console.log('if');
+    }else{
+      mySound.stop(); 
+      console.log('else');
+    }
+  });
+};
+
+btnHistoireCharbon.addEventListener('click', (e) => {
+  mySound = new sound("assets/son/histoireCharbon.mp3");
+  mySound.play();
+  // mySound.volume(0.5);
+});
+
+btnStylesCharbon.addEventListener('click', (e) => {
+  mySound.remove();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*----- Bulle dialogue annimation -----*/
@@ -394,3 +446,4 @@ const tlDia = gsap.timeline({});
         ease: 'linear',
         delay: 2.5
     });
+/*--------------------------------------------*/

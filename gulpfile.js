@@ -70,7 +70,7 @@ const watchFiles = () => {
 	gulp.watch("./src/assets/sass/**/*.scss", styles);
 	gulp.watch("./src/assets/js/**/*.js", javascript);
 	gulp.watch("./src/assets/lib/**/*.js", lib);
-	gulp.watch("./src/assets/son/**/*.js", son);
+	gulp.watch("./src/assets/son/**/*.mp3", son);
 	gulp.watch([
 		"./src/assets/fonts/**/*.ttf",
 		"./src/assets/fonts/**/*.woff",
