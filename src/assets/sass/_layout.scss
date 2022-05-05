@@ -115,6 +115,7 @@ filter: blur(1px);
     padding: 8px;
     margin-bottom: 15px;
     position: relative;
+	font-family: 'Roboto Slab', serif;
 }
 .bulle::after {
     content: "";
@@ -192,6 +193,9 @@ filter: blur(1px);
 	.section--displayNone.section--displayVisible{
 		margin-bottom: 2em;
 	}
+	.styleCharbon__el{
+		min-height: 415px;
+	}
 }
 
 @media screen and (min-width: 1440px) {
@@ -232,6 +236,9 @@ filter: blur(1px);
 	// .mine{
 	// 	max-height: 750px;
 	// }
+	.styleCharbon__el{
+		min-height: 486px;
+	}
 }
 
 

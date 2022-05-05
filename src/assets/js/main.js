@@ -377,6 +377,10 @@ function sound(src) {
 let btnHistoireCharbon = document.querySelector('.btn--histoireCharbon');
 let son = document.querySelectorAll('.son');
 let btnStylesCharbon = document.querySelector('.btn--stylesCharbon');
+let btnMineur = document.querySelector('.btn--mineur');
+let btnVisiteMine = document.querySelector('.btn--visiteMine');
+let btnAeration = document.querySelector('.btn--aeration');
+let btnTemperature = document.querySelector('.btn--temperature');
 
 for(let sonCouper of son){
   sonCouper.addEventListener('click', (e) => {
@@ -401,12 +405,26 @@ btnStylesCharbon.addEventListener('click', (e) => {
 });
 
 
+btnMineur.addEventListener('click', (e) => {
+  mySound = new sound("assets/son/Campagne.mp3");
+  mySound.play();
+});
 
+btnVisiteMine.addEventListener('click', (e) => {
+  mySound.remove();
+  mySound = new sound("assets/son/Local_technique_industrie.mp3");
+  mySound.play();
+});
 
+btnAeration.addEventListener('click', (e) => {
+  mySound.remove();
+  mySound = new sound("assets/son/Mats_qui_sifflent.mp3");
+  mySound.play();
+});
 
-
-
-
+btnTemperature.addEventListener('click', (e) => {
+  mySound.remove();
+});
 
 
 
@@ -446,4 +464,19 @@ const tlDia = gsap.timeline({});
         ease: 'linear',
         delay: 2.5
     });
+
+    let btnBulle = document.querySelector('.btn--bulle');
+    btnBulle.addEventListener('click', (e) => {
+      const tlDia2 = gsap.timeline({});
+      tlDia2.set('.dia-3',{
+          opacity: 0
+      });
+      tlDia2.to('.dia-3',{
+        opacity: 1,
+        duration: 1.5, 
+        ease: 'linear'
+      });
+    });
+
+
 /*--------------------------------------------*/

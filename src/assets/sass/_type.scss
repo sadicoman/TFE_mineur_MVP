@@ -41,6 +41,30 @@
     font-style:  italic;
 }
 
+
+
+
+
+/* Import font-face Bulle */
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/roboto-slab-v23-latin-regular.woff); /* IE9 Compat Modes */
+    src:
+         url(../fonts/roboto-slab-v23-latin-regular.woff2) format('woff2'), /* Super Modern Browsers */
+         url(../fonts/roboto-slab-v23-latin-regular.woff) format('woff'), /* Modern Browsers */
+         url(../fonts/roboto-slab-v23-latin-regular.ttf) format('truetype'), /* Safari, Android, iOS */
+  }
+
+
+
+
+
+
+
+
+
 /* Import font-face Titre*/
 @font-face {
     font-family: 'Holtwood One SC';
