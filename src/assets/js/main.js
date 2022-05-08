@@ -342,109 +342,6 @@ gsap.to(".airDroit2", {
 });
 /*--------------------------------------------*/
 
-
-/*----- FUNCTION SOUND -----*/
-var mySound;
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.classList.add('myAudio');
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-      this.sound.play();
-      console.log('play');
-    }
-    this.stop = function(){
-      this.sound.pause();
-      console.log('stop');
-    }
-    this.remove = function(){
-      this.sound.remove();
-      console.log('remove');
-    }
-    this.volume = function(){
-      this.sound.volume();
-    }
-}
-// mySound = new sound("assets/sound/voix/narrateur-1.mp3");
-// mySound.play();
-/*--------------------------------------------*/
-
-/*----- Son BTN -----*/
-let btnHistoireCharbon = document.querySelector('.btn--histoireCharbon');
-let son = document.querySelectorAll('.son');
-let btnStylesCharbon = document.querySelector('.btn--stylesCharbon');
-let btnMineur = document.querySelector('.btn--mineur');
-let btnVisiteMine = document.querySelector('.btn--visiteMine');
-let btnAeration = document.querySelector('.btn--aeration');
-let btnTemperature = document.querySelector('.btn--temperature');
-
-for(let sonCouper of son){
-  sonCouper.addEventListener('click', (e) => {
-    if (mySound.pause) {
-      mySound.play();
-      console.log('if');
-    }else{
-      mySound.stop(); 
-      console.log('else');
-    }
-  });
-};
-
-btnHistoireCharbon.addEventListener('click', (e) => {
-  mySound = new sound("assets/son/histoireCharbon.mp3");
-  mySound.play();
-  // mySound.volume(0.5);
-});
-
-btnStylesCharbon.addEventListener('click', (e) => {
-  mySound.remove();
-});
-
-
-btnMineur.addEventListener('click', (e) => {
-  mySound = new sound("assets/son/Campagne.mp3");
-  mySound.play();
-});
-
-btnVisiteMine.addEventListener('click', (e) => {
-  mySound.remove();
-  mySound = new sound("assets/son/Local_technique_industrie.mp3");
-  mySound.play();
-});
-
-btnAeration.addEventListener('click', (e) => {
-  mySound.remove();
-  mySound = new sound("assets/son/Mats_qui_sifflent.mp3");
-  mySound.play();
-});
-
-btnTemperature.addEventListener('click', (e) => {
-  mySound.remove();
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*----- Bulle dialogue annimation -----*/
 const tlDia = gsap.timeline({});
     tlDia.set('.dia-1',{
@@ -477,6 +374,128 @@ const tlDia = gsap.timeline({});
         ease: 'linear'
       });
     });
-
-
 /*--------------------------------------------*/
+
+
+/*----- FUNCTION SOUND -----*/
+var sonStopped = false;
+var mySound;
+function Sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.classList.add('myAudio');
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.setAttribute("loop", "true");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+      sonStopped = false;
+      console.log('play');
+    }
+    this.stop = function(){
+      this.sound.pause();
+      sonStopped = true;
+      console.log('stop');
+    }
+    this.remove = function(){
+      this.sound.remove();
+      console.log('remove');
+    }
+    // this.volume = function(){
+    //   this.sound.volume();
+    // }
+}
+// mySound = new sound("assets/sound/voix/narrateur-1.mp3");
+// mySound.play();
+/*--------------------------------------------*/
+
+/*----- Son BTN -----*/
+let btnHistoireCharbon = document.querySelector('.btn--histoireCharbon');
+let son = document.querySelectorAll('.son');
+let btnStylesCharbon = document.querySelector('.btn--stylesCharbon');
+let btnMineur = document.querySelector('.btn--mineur');
+let btnVisiteMine = document.querySelector('.btn--visiteMine');
+let btnAeration = document.querySelector('.btn--aeration');
+let btnTemperature = document.querySelector('.btn--temperature');
+
+for(let sonCouper of son){
+  sonCouper.addEventListener('click', (e) => {
+    if (sonStopped) {
+      mySound.play();
+      for(let btnSon of son){
+        btnSon.setAttribute('src', 'assets/images/Son.svg');
+      }
+      // console.log('Play Son');
+    }else{
+      mySound.stop(); 
+      for(let btnSon of son){
+        btnSon.setAttribute('src', 'assets/images/mute.svg');
+      }
+      // console.log('Couper Son');
+    }
+  });
+};
+
+btnHistoireCharbon.addEventListener('click', (e) => {
+  mySound = new Sound("assets/son/histoireCharbon.mp3");
+  if(sonStopped == false){
+    mySound.play();
+    document.querySelector('.myAudio').volume = 0.1;
+  }
+});
+
+btnStylesCharbon.addEventListener('click', (e) => {
+  mySound.remove();
+});
+
+
+btnMineur.addEventListener('click', (e) => {
+  mySound = new Sound("assets/son/Campagne.mp3");
+  if(sonStopped == false){
+    mySound.play();
+  }
+});
+
+btnVisiteMine.addEventListener('click', (e) => {
+  mySound.remove();
+  mySound = new Sound("assets/son/Local_technique_industrie.mp3");
+  document.querySelector('.myAudio').volume = 0.1;
+  if(sonStopped == false){
+    mySound.play();
+  }
+});
+
+btnAeration.addEventListener('click', (e) => {
+  mySound.remove();
+  mySound = new Sound("assets/son/Mats_qui_sifflent.mp3");
+  document.querySelector('.myAudio').volume = 0.2;
+  if(sonStopped == false){
+    mySound.play();
+  }
+});
+
+btnTemperature.addEventListener('click', (e) => {
+  mySound.remove();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
