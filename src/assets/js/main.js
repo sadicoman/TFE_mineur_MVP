@@ -1,5 +1,194 @@
 "use strict";
 
+// /*----- ANNIMATION CLICK MENU -----*/
+// var navEl = document.querySelectorAll(".nav__lien");
+// for (var i = 0; i < navEl.length; i++) {
+//     /* cette ligne permet de gérer les interactions au click*/
+//     navEl[i].addEventListener("click", function (e) {
+//         var currentLink = this.href;
+//         /*C'est dans cette ligne, dans les (...) qu'on ajoute la class 
+//         qui contient l'animation qu'on souhaite réaliser lors du changement de page*/
+//         document.body.classList.add("out");
+//         /*Cette ligne accorde le droit de changer de page une fois que l'animation est finie*/
+//         document.body.addEventListener("animationend", function (e) {
+//             window.location = currentLink;
+//         });
+//         e.preventDefault();
+//     });
+// }
+
+/*-----BURGER MENU-----*/
+
+let navButton = document.querySelector(".navBtn");
+let navEl = document.querySelectorAll(".nav__el");
+
+navButton.addEventListener("click", toggleNavigation);
+navButton.addEventListener("click", annimationMenu);
+
+function toggleNavigation() {
+    if (!document.body.hasAttribute("data-menu")) {
+        document.body.setAttribute("data-menu", true);
+    } else {
+        document.body.removeAttribute("data-menu");
+    }
+}
+
+
+
+// ============================================
+// il faut corriger l'annimation
+// ============================================
+function annimationMenu() {
+  for(let i = 0 ; i < navEl.length ; i++){ 
+    const tlNavEl = gsap.timeline();
+    if(i % 2 == 0){  // pair
+      
+      tlNavEl.set(".nav__el",{
+        duration: 0.6,
+        opacity: 0,
+        ease: "ease"
+      });
+      tlNavEl.to(".nav__el", {
+        duration: 0.6, 
+        opacity: 1,
+        x: 50,
+        ease: "ease"
+      });
+    }else{  // impair
+      tlNavEl.set(".nav__el",{
+        duration: 0.6,
+        opacity: 0,
+        ease: "ease"
+      });
+      tlNavEl.to(".nav__el", {
+        duration: 0.6, 
+        opacity: 1,
+        x: -50,
+        ease: "ease"
+      });
+    }
+  }
+}
+
+
+
+/*----- ANNIMATION CLICK Burger -----*/
+let container = document.querySelector('.container');
+let burgs = document.querySelectorAll('.burg');
+let type = ['h', 'm', 'b'];
+let clicked = false;
+container.addEventListener('click', (e) => {
+if (clicked) {
+  for (let i = 0; i < burgs.length; i++) {
+    burgs[i].classList.remove(`burg__${type[i]}--clicked`);
+    clicked = false;
+  }
+  } else {
+    for (let i = 0; i < burgs.length; i++) {
+      burgs[i].classList.add(`burg__${type[i]}--clicked`);
+    }
+    clicked = true;
+  }
+});
+    
+// menu clic
+
+var sonStopped = false;
+var mySound;
+
+
+for(let el of navEl){
+  el.addEventListener('click', (e) =>{
+    let loc = el.getAttribute('data-loc');
+    document.body.removeAttribute("data-menu");
+    for (let i = 0; i < burgs.length; i++) {
+      burgs[i].classList.remove(`burg__${type[i]}--clicked`);
+      clicked = false;
+    }
+    
+    let elShow = document.querySelector(".section--displayVisible");
+    
+    let elNext;
+    let sections = document.querySelectorAll('.section');
+    for(let el of sections){
+      if (el.classList.contains(loc)){
+        elNext = el;
+        el.classList.add('section--displayVisible');
+      }
+    }
+  
+    elShow.classList.remove("section--displayVisible");
+  
+    if(elNext){
+      elNext.classList.add("section--displayVisible");
+    }else{
+      let elFirst = elShow.parentNode.firstElementChild;
+      elFirst.classList.add("section--displayVisible");
+    }
+
+// ============================================
+// il faut supprimer l'audio
+// ============================================
+
+    if (document.querySelector('.myAudio')) {
+      mySound.remove();
+    }
+
+
+
+
+    if(loc == 'histoireCharbon'){
+      mySound = new Sound("assets/son/histoireCharbon.mp3");
+      if(sonStopped == false){
+        mySound.play();
+        document.querySelector('.myAudio').volume = 0.1;
+      }
+    }else if(loc == 'journeeType'){
+      mySound = new Sound("assets/son/Campagne.mp3");
+      if(sonStopped == false){
+        mySound.play();
+      }
+    }else if(loc == 'presentationMine'){
+      mySound.remove();
+      mySound = new Sound("assets/son/Local_technique_industrie.mp3");
+      document.querySelector('.myAudio').volume = 0.1;
+      if(sonStopped == false){
+        mySound.play();
+      }
+    }else if(loc == 'circuitAerage'){
+      mySound.remove();
+      mySound = new Sound("assets/son/Mats_qui_sifflent.mp3");
+      document.querySelector('.myAudio').volume = 0.2;
+      if(sonStopped == false){
+        mySound.play();
+      }
+    }
+    
+    
+    tlShowText.set(elNext,{
+      transform: 'translateX(150px)'
+    })
+    tlShowText.to(elNext,{
+      duration: 0.6,
+      opacity: 1,
+      transform: 'translateX(0px)'
+    }); 
+    
+  });
+}
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
 /*----- Btn -----*/
 let btnTaille = document.querySelectorAll(".btn");
 let btnTailleHaut = document.querySelectorAll(".btn__el--haut");
@@ -359,7 +548,7 @@ const tlDia = gsap.timeline({});
         opacity: 1,
         duration: 0.8, 
         ease: 'linear',
-        delay: 2.5
+        delay: 1
     });
 
     let btnBulle = document.querySelector('.btn--bulle');
@@ -378,8 +567,7 @@ const tlDia = gsap.timeline({});
 
 
 /*----- FUNCTION SOUND -----*/
-var sonStopped = false;
-var mySound;
+
 function Sound(src) {
     this.sound = document.createElement("audio");
     this.sound.classList.add('myAudio');

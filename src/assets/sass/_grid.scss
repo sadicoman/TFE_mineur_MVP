@@ -8,13 +8,25 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px 20px;
+    align-items: center;
 }
 
 .btn--fleche{
     background-color: inherit;
     border: inherit;
+    cursor: pointer; 
 }
-
+.btn__fleche:hover{
+    .btn__fleche--hover{
+        stroke: blue; 
+    }
+}
+.btn__fleche--hover, .header__logo, .header__img{
+    cursor: pointer;  
+}
+.btn__fleche--hover:hover{
+    stroke: blue;
+} 
 
 /* Main */
 .grid{

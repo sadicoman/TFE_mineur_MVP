@@ -5,6 +5,101 @@
 @use "_var.scss";
 
 /* HEADER */
+/*********** MENU BURGER ***********/
+.header{
+    max-width: 320px;
+    margin: auto;
+}
+.container{
+	width: 48px;
+    height: 48px;
+}
+.burg{
+    width: 47px;
+    height: 10px;
+    margin-bottom: 3px;
+    background-color: var(--color-on-background);
+    border-radius: 4px;
+}
+.navBtn:hover {
+	.burg{
+		background-color: var(--color-primary);
+	}
+}
+
+.burg__h{
+    animation: burgerH 0.8s ease;
+}
+@keyframes burgerH{
+// 0%{
+//   transform: translateY(11px) rotate(45deg);
+// }
+    0%{
+        transform: translateY(11px) rotate(0deg);
+    }100%{
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+.burg__b{
+    animation: burgerB 0.8s ease;
+}
+@keyframes burgerB{
+// 0%{
+//   transform: translateY(-11px) rotate(45deg);
+// }
+    0%{
+        transform: translateY(-14px) rotate(0deg);
+    }100%{
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+.burg__h--clicked{
+    transform: translateY(14px) rotate(45deg);
+    animation: burger 0.8s ease;
+    animation-direction: alternate;
+}
+@keyframes burger{
+    0%{
+        transform: translateY(14px) rotate(0deg);
+    }100%{
+        transform: translateY(14px) rotate(45deg);
+    }
+}
+.burg__m--clicked{
+    visibility: hidden;
+}
+.burg__b--clicked{
+    transform: translateY(-12px) rotate(-45deg);
+    animation: burger2 0.8s ease;
+    animation-direction: alternate;
+}
+@keyframes burger2{
+    0%{
+        transform: translateY(-12px) rotate(0deg);
+    }100%{
+        transform: translateY(-12px) rotate(-45deg);
+    }
+}
+
+.nav__lien {
+    color: var(--color-on-background);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+    display: inline-block;
+    padding: 1em;
+    margin: .5em;
+    font-size: 20px;
+    transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1);
+}
+.nav__lien:hover {
+    color: var(--color-primary);
+}
+.nav__el--actif {
+    border-bottom: 2px var(--color-primary) solid;
+}
+
+
 
 /* Main */
 .section:last-child{
@@ -169,6 +264,7 @@ filter: blur(1px);
 
 .son{
 	justify-self: end;
+	cursor: pointer;
 }
 
 
@@ -244,6 +340,10 @@ filter: blur(1px);
 	.styleCharbon__el{
 		min-height: 486px;
 	}
+	.son{
+		align-self: center;
+	}
+	
 }
 
 
