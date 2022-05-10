@@ -91,6 +91,8 @@
     margin: .5em;
     font-size: 20px;
     transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1);
+	background-color: inherit;
+	border: none;
 }
 .nav__lien:hover {
     color: var(--color-primary);
@@ -262,9 +264,12 @@ filter: blur(1px);
 	margin-bottom: 125px;
 }
 
-.son{
+.son, .son path, .son rect{
 	justify-self: end;
 	cursor: pointer;
+}
+.son:hover path, .son:hover rect{
+	fill: var(--color-primary);
 }
 
 

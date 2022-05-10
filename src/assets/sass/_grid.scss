@@ -18,14 +18,14 @@
 }
 .btn__fleche:hover{
     .btn__fleche--hover{
-        stroke: blue; 
+        stroke: var(--color-primary); 
     }
 }
 .btn__fleche--hover, .header__logo, .header__img{
     cursor: pointer;  
 }
 .btn__fleche--hover:hover{
-    stroke: blue;
+    stroke: var(--color-primary);
 } 
 
 /* Main */

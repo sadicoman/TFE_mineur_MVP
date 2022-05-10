@@ -607,19 +607,37 @@ let btnMineur = document.querySelector('.btn--mineur');
 let btnVisiteMine = document.querySelector('.btn--visiteMine');
 let btnAeration = document.querySelector('.btn--aeration');
 let btnTemperature = document.querySelector('.btn--temperature');
+let sonPlay = document.querySelectorAll('.son--play');
+let sonStop = document.querySelectorAll('.son--stop');
+
 
 for(let sonCouper of son){
   sonCouper.addEventListener('click', (e) => {
     if (sonStopped) {
       mySound.play();
-      for(let btnSon of son){
-        btnSon.setAttribute('src', 'assets/images/Son.svg');
+      for(let btnSon of sonPlay){
+        // btnSon.setAttribute('src', 'assets/images/Son.svg');
+        btnSon.classList.remove("hidden");
+      }
+      for(let btnSon of sonStop){
+        // btnSon.setAttribute('src', 'assets/images/Son.svg');
+        btnSon.classList.add("hidden");
       }
       // console.log('Play Son');
     }else{
       mySound.stop(); 
-      for(let btnSon of son){
-        btnSon.setAttribute('src', 'assets/images/mute.svg');
+      // for(let btnSon of son){
+      //   // btnSon.setAttribute('src', 'assets/images/mute.svg');
+      //   btnSon.querySelector('.son--stop').classList.remove("hidden");
+      //   btnSon.querySelector('.son--play').classList.add("hidden");
+      // }
+      for(let btnSon of sonPlay){
+        // btnSon.setAttribute('src', 'assets/images/Son.svg');
+        btnSon.classList.add("hidden");
+      }
+      for(let btnSon of sonStop){
+        // btnSon.setAttribute('src', 'assets/images/Son.svg');
+        btnSon.classList.remove("hidden");
       }
       // console.log('Couper Son');
     }
