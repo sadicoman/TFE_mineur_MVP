@@ -54,10 +54,17 @@
 <body class="body">
 	<header class="header">
 		<a href="index.html" class="header__logo"><img class="header__img" src="assets/images/Logo_mineur.svg" alt="Logo Mineur"></a>
+		<div class="navBtn">
+			<div class="container">
+				<div class="burg burg__h"></div>
+				<div class="burg burg__m"></div>
+				<div class="burg burg__b"></div>
+			</div>
+		</div>	
 		<nav class="nav">
 			<ul class="nav__liste">
-				<li class="nav__el ">
-					<button class="nav__lien" data-loc="presentation">Petite présentation</button>
+				<li class="nav__el " data-loc="presentation">
+					<button class="nav__lien nav__el--actif">Petite présentation</button>
 				</li>
 				<li class="nav__el " data-loc="histoireCharbon">
 					<button class="nav__lien">l’histoire du charbon</button>
@@ -74,15 +81,20 @@
 				<li class="nav__el " data-loc="circuitAerage">
 					<button class="nav__lien">Circuit d'aérage</button>
 				</li>
+				<li class="nav__el " data-loc="temperature">
+					<button class="nav__lien">Température</button>
+				</li>
+				<li class="nav__el " data-loc="geologie">
+					<button class="nav__lien">Un peu de géologie</button>
+				</li>
+				<li class="nav__el " data-loc="horaireTravail">
+					<button class="nav__lien">Horaire de travail</button>
+				</li>
+				<li class="nav__el " data-loc="fermetureMine">
+					<button class="nav__lien">Fermeture des mines</button>
+				</li>
 			</ul>
 		</nav>
-		<div class="navBtn">
-			<div class="container">
-				<div class="burg burg__h"></div>
-				<div class="burg burg__m"></div>
-				<div class="burg burg__b"></div>
-			</div>
-		</div>		
 	</header>
 	<main class="main">
 		<section class="presentation section section--displayNone section--displayVisible grid">
@@ -1290,9 +1302,43 @@
 				</div>
 			</div>
 		</section>
-		<section class="grid section section--displayNone section--opacity">
+		<section class="temperature grid section section--displayNone section--opacity">
+			<h2 class="title title--h2">Température</h2>
+			<div class="btn__container btn--espace pgridRow-start2 pgrid-start4">
+				<div class="btn btn--icon">
+					<button class="btn__el btn__el--haut btn--next btn--temperature">
+						<span class="btn__span btn__span--icone">De la géologie</span> 
+					</button>
+					<div class="btn__el--bas"></div>
+				</div>
+			</div>
+		</section>
+		<section class="geologie grid section section--displayNone section--opacity">
+			<h2 class="title title--h2">Un peu de géologie</h2>
+			<div class="btn__container btn--espace pgridRow-start2 pgrid-start4">
+				<div class="btn btn--icon">
+					<button class="btn__el btn__el--haut btn--next btn--temperature">
+						<span class="btn__span btn__span--icone">Prenons du temps</span> 
+					</button>
+					<div class="btn__el--bas"></div>
+				</div>
+			</div>
+		</section>
+		<section class="horaireTravail grid section section--displayNone section--opacity">
+			<h2 class="title title--h2">Horaire de travail</h2>
+			<div class="btn__container btn--espace pgridRow-start2 pgrid-start4">
+				<div class="btn btn--icon">
+					<button class="btn__el btn__el--haut btn--next btn--temperature">
+						<span class="btn__span btn__span--icone">Malheureuse fermeture</span> 
+					</button>
+					<div class="btn__el--bas"></div>
+				</div>
+			</div>
+		</section>
+		<section class="fermetureMine grid section section--displayNone section--opacity">
 			<h2 class="title title--h2">Suite ....</h2>
 		</section>
 	</main>
+
 </body>
 </html>

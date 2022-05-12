@@ -1,71 +1,61 @@
 "use strict";
 
-// /*----- ANNIMATION CLICK MENU -----*/
-// var navEl = document.querySelectorAll(".nav__lien");
-// for (var i = 0; i < navEl.length; i++) {
-//     /* cette ligne permet de gérer les interactions au click*/
-//     navEl[i].addEventListener("click", function (e) {
-//         var currentLink = this.href;
-//         /*C'est dans cette ligne, dans les (...) qu'on ajoute la class 
-//         qui contient l'animation qu'on souhaite réaliser lors du changement de page*/
-//         document.body.classList.add("out");
-//         /*Cette ligne accorde le droit de changer de page une fois que l'animation est finie*/
-//         document.body.addEventListener("animationend", function (e) {
-//             window.location = currentLink;
-//         });
-//         e.preventDefault();
-//     });
-// }
+// ==================================
+// 
+// ==================================
 
-/*-----BURGER MENU-----*/
-
+      
+      /*-----BURGER MENU-----*/
+      
 let navButton = document.querySelector(".navBtn");
 let navEl = document.querySelectorAll(".nav__el");
 
 navButton.addEventListener("click", toggleNavigation);
-navButton.addEventListener("click", annimationMenu);
 
 function toggleNavigation() {
     if (!document.body.hasAttribute("data-menu")) {
         document.body.setAttribute("data-menu", true);
+        annimationMenu();
     } else {
         document.body.removeAttribute("data-menu");
     }
 }
 
+let localisationSection = 0;
 
-
-// ============================================
-// il faut corriger l'annimation
-// ============================================
+const navTl = gsap.timeline({defaults: {duration: 1}});
+let wooosh = document.querySelector(".wooosh");
 function annimationMenu() {
-  for(let i = 0 ; i < navEl.length ; i++){ 
-    const tlNavEl = gsap.timeline();
+  
+  for(let el of navElBtns){
+    el.classList.remove('nav__el--actif');
+  }
+  navElBtns[localisationSection].classList.add('nav__el--actif');
+
+  // décallage des éléments
+  for(let i = 0 ; i < navEl.length ; i++){
+
     if(i % 2 == 0){  // pair
-      
-      tlNavEl.set(".nav__el",{
-        duration: 0.6,
-        opacity: 0,
-        ease: "ease"
-      });
-      tlNavEl.to(".nav__el", {
-        duration: 0.6, 
-        opacity: 1,
-        x: 50,
-        ease: "ease"
-      });
+      navTl.set(navEl[i], {x: 150, opacity: 0}); 
     }else{  // impair
-      tlNavEl.set(".nav__el",{
-        duration: 0.6,
-        opacity: 0,
-        ease: "ease"
-      });
-      tlNavEl.to(".nav__el", {
-        duration: 0.6, 
-        opacity: 1,
-        x: -50,
-        ease: "ease"
-      });
+      navTl.set(navEl[i], {x: -150, opacity: 0}); 
+    }
+  }
+  // animation des éléments
+  for(let i = 0 ; i < navEl.length ; i++){
+    
+    
+    
+    if(i % 2 == 0){  // pair
+      if(i == 0){
+        navTl.to(navEl[i], {x: 0, duration: 0.3, opacity: 1, delay: 0.1});
+      }else{
+        navTl.to(navEl[i], {x: 0, duration: 0.3, opacity: 1}, "-=0.1");
+      }
+
+    }else{  // impair
+      navTl.to(navEl[i], {x: 0, duration: 0.3, opacity: 1}, "-=0.1");
+
     }
   }
 }
@@ -78,11 +68,11 @@ let burgs = document.querySelectorAll('.burg');
 let type = ['h', 'm', 'b'];
 let clicked = false;
 container.addEventListener('click', (e) => {
-if (clicked) {
-  for (let i = 0; i < burgs.length; i++) {
-    burgs[i].classList.remove(`burg__${type[i]}--clicked`);
-    clicked = false;
-  }
+  if (clicked) {
+    for (let i = 0; i < burgs.length; i++) {
+      burgs[i].classList.remove(`burg__${type[i]}--clicked`);
+      clicked = false;
+    }
   } else {
     for (let i = 0; i < burgs.length; i++) {
       burgs[i].classList.add(`burg__${type[i]}--clicked`);
@@ -96,16 +86,28 @@ if (clicked) {
 var sonStopped = false;
 var mySound;
 
+let navElBtns = document.querySelectorAll(".nav__lien");
 
-for(let el of navEl){
-  el.addEventListener('click', (e) =>{
-    let loc = el.getAttribute('data-loc');
+for(let i = 0 ; i < navEl.length ; i++){
+  navEl[i].addEventListener('click', (e) =>{
+
+    localisationSection = i;
+
+    for(let element of navElBtns){
+      element.classList.remove('nav__el--actif');
+    }
+    navElBtns[i].classList.add('nav__el--actif');
+
+
+    let loc = navEl[i].getAttribute('data-loc');
     document.body.removeAttribute("data-menu");
     for (let i = 0; i < burgs.length; i++) {
       burgs[i].classList.remove(`burg__${type[i]}--clicked`);
       clicked = false;
     }
     
+    
+
     let elShow = document.querySelector(".section--displayVisible");
     
     let elNext;
@@ -116,9 +118,9 @@ for(let el of navEl){
         el.classList.add('section--displayVisible');
       }
     }
-  
+    
     elShow.classList.remove("section--displayVisible");
-  
+
     if(elNext){
       elNext.classList.add("section--displayVisible");
     }else{
@@ -126,9 +128,8 @@ for(let el of navEl){
       elFirst.classList.add("section--displayVisible");
     }
 
-// ============================================
-// il faut supprimer l'audio
-// ============================================
+  
+ 
 
     if (document.querySelector('.myAudio')) {
       mySound.remove();
@@ -138,25 +139,44 @@ for(let el of navEl){
 
 
     if(loc == 'histoireCharbon'){
+      if(document.querySelector('.sable2')){
+        document.querySelector('.sable2').classList.remove('sable2');
+      }
+      for(let i = 0 ; i < etapes1.length ; i++){
+        gsap.to(etapes1[i], {duration: 1, morphSVG: etapes1[i]});
+      };
+      index = 1;
+      btnAvant.classList.add('hidden');
+      if(btnSuivant.classList.contains('hidden')){
+        btnSuivant.classList.remove('hidden');
+      }
+      btnSwap.classList.add('hidden');
+      pgCharbon.innerHTML = "Au commencement, il y avait de magnifiques forêts avec des végétaux à perte de vue.";
+			
       mySound = new Sound("assets/son/histoireCharbon.mp3");
       if(sonStopped == false){
         mySound.play();
         document.querySelector('.myAudio').volume = 0.1;
       }
+    }else if(loc == "styleCharbon"){
+      styleCharbon[charbonIndex].classList.add('hidden');
+      charbonIndex = 0;
+      styleCharbon[charbonIndex].classList.remove('hidden');
+      btnSuivantCharbon.classList.remove('hidden');
+      btnSwap2.classList.add('hidden');
+      btnAvantCharbon.classList.add('hidden');
     }else if(loc == 'journeeType'){
       mySound = new Sound("assets/son/Campagne.mp3");
       if(sonStopped == false){
         mySound.play();
       }
     }else if(loc == 'presentationMine'){
-      mySound.remove();
       mySound = new Sound("assets/son/Local_technique_industrie.mp3");
       document.querySelector('.myAudio').volume = 0.1;
       if(sonStopped == false){
         mySound.play();
       }
     }else if(loc == 'circuitAerage'){
-      mySound.remove();
       mySound = new Sound("assets/son/Mats_qui_sifflent.mp3");
       document.querySelector('.myAudio').volume = 0.2;
       if(sonStopped == false){
@@ -231,8 +251,9 @@ for(let btn of btnPrev){
 function next(){
   let elShow = document.querySelector(".section--displayVisible");
   let elNext = elShow.nextElementSibling;
-
   elShow.classList.remove("section--displayVisible");
+
+  localisationSection += 1;
 
   if(elNext){
     elNext.classList.add("section--displayVisible");
@@ -360,6 +381,9 @@ btnSuivant.addEventListener('click', (e) => {
     btnSwap.classList.toggle('hidden');
   }
   index++;
+  if(index > 6){
+    index = 0;
+  }
 });
 
 btnAvant.addEventListener('click', (e) => {
@@ -420,6 +444,7 @@ btnSuivantCharbon.addEventListener('click', (e) => {
         btnSuivantCharbon.classList.add('hidden');
     }
 });
+
 
 // Arriere
 btnAvantCharbon.addEventListener('click', (e) => {
