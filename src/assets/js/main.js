@@ -137,7 +137,7 @@ for(let i = 0 ; i < navEl.length ; i++){
 
 
 
-
+    /*Click Navigation Menu*/
     if(loc == 'histoireCharbon'){
       if(document.querySelector('.sable2')){
         document.querySelector('.sable2').classList.remove('sable2');
@@ -182,9 +182,12 @@ for(let i = 0 ; i < navEl.length ; i++){
       if(sonStopped == false){
         mySound.play();
       }
+    }else if(loc == 'temperature'){
+      temperature();
+    }else if(loc == 'geologie'){
+      geo();
     }
-    
-    
+
     tlShowText.set(elNext,{
       transform: 'translateX(150px)'
     })
@@ -591,6 +594,283 @@ const tlDia = gsap.timeline({});
 /*--------------------------------------------*/
 
 
+
+
+/*----- Annimation température -----*/
+let btnTemperature = document.querySelector('.btn--temperature');
+function temperature() {
+const tlTemp = gsap.timeline({});
+    tlTemp.set('.temperature-1',{
+        opacity: 0
+    });
+    tlTemp.set('.temperature-txt-1',{
+      opacity: 0
+    });
+    tlTemp.set('.temperature-2',{
+        opacity: 0
+    });
+    tlTemp.set('.temperature-txt-2',{
+      opacity: 0
+    });
+    tlTemp.set('.temperature-3',{
+      opacity: 0
+    });
+    tlTemp.set('.temperature-txt-3',{
+      opacity: 0
+    });
+    tlTemp.set('.temperature-4',{
+      opacity: 0
+    });
+    tlTemp.set('.temperature-txt-4',{
+      opacity: 0
+    });
+    tlTemp.set('.temperature-5',{
+      opacity: 0
+    });
+    tlTemp.set('.temperature-txt-5',{
+      opacity: 0
+    });
+    tlTemp.to('.temperature-1',{
+      opacity: 1,
+      duration: 1, 
+      delay: 0.5, 
+      ease: 'linear'
+    });
+    tlTemp.to('.temperature-txt-1',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('.temperature-2',{
+        opacity: 1,
+        duration: 1, 
+        delay: 1, 
+        ease: 'linear',
+    });
+    tlTemp.to('.temperature-txt-2',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('.temperature-3',{
+      opacity: 1,
+      duration: 1, 
+      delay: 1, 
+      ease: 'linear'
+    });
+    tlTemp.to('.temperature-txt-3',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('.temperature-4',{
+      opacity: 1,
+      duration: 1, 
+      delay: 1, 
+      ease: 'linear'
+    });
+    tlTemp.to('.temperature-txt-4',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('.temperature-5',{
+      opacity: 1,
+      duration: 1, 
+      delay: 1, 
+      ease: 'linear'
+    });
+    tlTemp.to('.temperature-txt-5',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+}
+
+btnTemperature.addEventListener('click', (e) => {
+  temperature();
+});
+/*--------------------------------------------*/
+
+
+
+/*----- Annimation température -----*/
+let btnGeo = document.querySelector('.btn--geologie');
+function geo() {
+const tlTemp = gsap.timeline({});
+    tlTemp.set('#geo-1',{
+        opacity: 0
+    });
+    tlTemp.set('#geo-txt-1',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-2',{
+        opacity: 0
+    });
+    tlTemp.set('#geo-txt-2',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-3',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-txt-3',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-4',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-txt-4',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-5',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-txt-5',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-6',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-txt-6',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-7',{
+      opacity: 0
+    });
+    tlTemp.set('#geo-txt-7',{
+      opacity: 0
+    });
+    tlTemp.to('#geo-1',{
+      opacity: 1,
+      duration: 1, 
+      delay: 0.5, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-txt-1',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-2',{
+        opacity: 1,
+        duration: 1, 
+        delay: 1, 
+        ease: 'linear',
+    });
+    tlTemp.to('#geo-txt-2',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-3',{
+      opacity: 1,
+      duration: 1, 
+      delay: 1, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-txt-3',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-4',{
+      opacity: 1,
+      duration: 1, 
+      delay: 1, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-txt-4',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-5',{
+      opacity: 1,
+      duration: 1, 
+      delay: 1, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-txt-5',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-6',{
+      opacity: 1,
+      duration: 1, 
+      delay: 1, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-txt-6',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-7',{
+      opacity: 1,
+      duration: 1, 
+      delay: 1, 
+      ease: 'linear'
+    });
+    tlTemp.to('#geo-txt-7',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+}
+
+btnGeo.addEventListener('click', (e) => {
+  geo();
+});
+/*--------------------------------------------*/
+
+
+
+/*----- Annimation température -----*/
+
+
+
+
+
+const tlTemp = gsap.timeline({});
+tlTemp.set('.pandule',{
+    transformOrigin: 'top center'
+  });
+  tlTemp.to('.pandule',{
+    duration: 1.5,
+    repeat: -1,
+    rotation: '5deg',
+    yoyo: true,
+    ease:"sine.inOut"
+  });
+  tlTemp.to('.pandule',{
+    duration: 1.5,
+    repeat: -1,
+    rotation: '-5deg',
+    yoyo: true,
+    ease:"sine.inOut"
+  });
+
+  const tlTemp2 = gsap.timeline({});
+  tlTemp.set('.aiguille__seconde',{
+      transformOrigin: '-50px 55px'
+    });
+    tlTemp2.to('.aiguille__seconde',{
+      duration: 6,
+      repeat: -1,
+      rotation: '360deg',
+      // yoyo: true,
+      ease: 'linear'
+    });
+    // tlTemp2.to('.aiguille__seconde',{
+    //   duration: 1.5,
+    //   repeat: -1,
+    //   rotation: '-5deg',
+    //   yoyo: true,
+    //   ease:"sine.inOut"
+    // });
+
+/*--------------------------------------------*/
 /*----- FUNCTION SOUND -----*/
 
 function Sound(src) {
@@ -631,7 +911,6 @@ let btnStylesCharbon = document.querySelector('.btn--stylesCharbon');
 let btnMineur = document.querySelector('.btn--mineur');
 let btnVisiteMine = document.querySelector('.btn--visiteMine');
 let btnAeration = document.querySelector('.btn--aeration');
-let btnTemperature = document.querySelector('.btn--temperature');
 let sonPlay = document.querySelectorAll('.son--play');
 let sonStop = document.querySelectorAll('.son--stop');
 

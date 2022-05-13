@@ -53,6 +53,7 @@ body[data-menu] .main{
 body[data-menu] .footer{
     display: none;
 }
+
 // @keyframes lien{
 //     from{
 //         transform: translateX(-50px);
@@ -74,9 +75,7 @@ body[data-menu] .footer{
 body[data-menu] .nav {
     // background-color: var(--color-background);
     display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
+    grid-column: 1 / -1;
     height: 100%;
     width: 100%;
     overflow-y: scroll;

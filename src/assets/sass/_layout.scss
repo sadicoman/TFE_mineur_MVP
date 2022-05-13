@@ -89,7 +89,7 @@
     display: inline-block;
     padding: 1em;
     margin: .5em;
-    font-size: 20px;
+    font-size: 1em;
     transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1);
 	background-color: inherit;
 	border: none;
@@ -113,6 +113,9 @@
 }
 .header__img{
 	padding-left: 18px;	
+}
+body[data-menu] .header__img{
+   width: 200px;
 }
 /* BTN */
 .btn{
@@ -225,6 +228,12 @@ filter: blur(1px);
     bottom: 10px;
     left: -17px;
 }
+.bulle--blanc::after {
+    border-color: transparent #fff transparent transparent;
+}
+.bulle--blanc {
+    background: #fff;
+}
 .section__div{
 	background-image: url("../images/Background_perso.png");
 	background-position: center;
@@ -271,7 +280,9 @@ filter: blur(1px);
 .son:hover path, .son:hover rect{
 	fill: var(--color-primary);
 }
-
+.tmp__fleche{
+    transform: rotate(0.01turn) translateY(-30px) translateX(35px);
+}
 
 @media screen and (min-width: 768px) {
 	.btn--espace{
@@ -363,9 +374,12 @@ filter: blur(1px);
 		max-height: 400px;
 		width: auto;
 	}
-	.mine, .aerage{
+	.mine, .aerage, .geologie--svg, .horloge--svg{
 		max-height: 550px;
 		width: auto;
+	}
+	.horloge--svg{
+		justify-self: center;
 	}
 }
 
