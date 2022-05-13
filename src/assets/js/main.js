@@ -1,7 +1,7 @@
 "use strict";
 
 // ==================================
-// 
+// Optimiser les annim en les coupant quand pas besoin
 // ==================================
 
       
@@ -186,7 +186,12 @@ for(let i = 0 ; i < navEl.length ; i++){
       temperature();
     }else if(loc == 'geologie'){
       geo();
+    }else if(loc == 'horaireTravail'){
+      horaire();
+    }else if(loc == 'fermetureMine'){
+      closed();
     }
+
 
     tlShowText.set(elNext,{
       transform: 'translateX(150px)'
@@ -466,45 +471,63 @@ btnAvantCharbon.addEventListener('click', (e) => {
 
 
 /*----- SVG Presentation Mine annimation -----*/
-const tlRoue = gsap.timeline({repeat: -1, yoyo: true});
-tlRoue.set(".roue",{
-  duration: 6,
-  rotation: -180,
-  transformOrigin: 'center',
-  ease: "power2.inOut"
-});
-tlRoue.to(".roue", {
-  duration: 6, 
-  rotation: 180,  
-  transformOrigin: 'center',
-  ease: "power2.inOut"
-});
+function animMine() {
+  const tlRoue = gsap.timeline({repeat: -1, yoyo: true});
+  tlRoue.set(".roue",{
+    duration: 6,
+    rotation: -180,
+    transformOrigin: 'center',
+    ease: "power2.inOut"
+  });
+  tlRoue.to(".roue", {
+    duration: 6, 
+    rotation: 180,  
+    transformOrigin: 'center',
+    ease: "power2.inOut"
+  });
 
-gsap.to(".berline", {
-  duration: 10, 
-  x: 100, 
-  yoyo: true, 
-  // transformOrigin: 'center', 
-  repeat: -1,
-  ease: 'linear',
-});
-gsap.to(".berline2", {
-  duration: 10, 
-  x: -100, 
-  yoyo: true, 
-  // transformOrigin: 'center', 
-  repeat: -1,
-  ease: 'linear',
-});
+  gsap.to(".berline", {
+    duration: 10, 
+    x: 100, 
+    yoyo: true, 
+    // transformOrigin: 'center', 
+    repeat: -1,
+    ease: 'linear',
+  });
+  gsap.to(".berline2", {
+    duration: 10, 
+    x: -100, 
+    yoyo: true, 
+    // transformOrigin: 'center', 
+    repeat: -1,
+    ease: 'linear',
+  });
 
-gsap.to(".skip", {
-  duration: 6, 
-  y: -130, 
-  yoyo: true, 
-  // transformOrigin: 'center', 
-  repeat: -1,
-  ease: "power2.inOut",
-});
+  gsap.to(".skip", {
+    duration: 6, 
+    y: -130, 
+    yoyo: true, 
+    // transformOrigin: 'center', 
+    repeat: -1,
+    ease: "power2.inOut",
+  });
+}
+animMine();
+/*Optimiser les annim en les coupant quand pas besoin*/
+let btnAeration = document.querySelector('.btn--aeration');
+// btnAeration.addEventListener('click', (e) => {
+//   // let animKill = gsap.getTweensOf(".mine")
+//   // animKill.kill();
+//   // gsap.killTweensOf(".mine");
+//   // animMine(kill);
+//   gsap.killTweensOf(animMine());
+// });
+
+
+
+//ici
+
+
 /*--------------------------------------------*/
 
 /*----- SVG Présentation du circuit d'aérage Annimation -----*/
@@ -831,7 +854,8 @@ btnGeo.addEventListener('click', (e) => {
 
 
 
-
+let btnHorloge = document.querySelector('.btn--horloge');
+function horaire() {
 const tlTemp = gsap.timeline({});
 tlTemp.set('.pandule',{
     transformOrigin: 'top center'
@@ -853,22 +877,73 @@ tlTemp.set('.pandule',{
 
   const tlTemp2 = gsap.timeline({});
   tlTemp.set('.aiguille__seconde',{
-      transformOrigin: '-50px 55px'
+      // transformOrigin: 'bottom center',
+      transformOrigin: '50% 95%',
+      y: 0,
+      x:0
+    });
+    tlTemp.set('.aiguille__minutes',{
+      // transformOrigin: 'bottom center',
+      transformOrigin: '50% 95%',
+      y: 18,
+      x:42
+    });
+    tlTemp.set('.aiguille__heures',{
+      // transformOrigin: 'bottom center',
+      transformOrigin: '50% 95%',
+      y: 0,
+      x:0
     });
     tlTemp2.to('.aiguille__seconde',{
-      duration: 6,
+      duration: 1,
       repeat: -1,
       rotation: '360deg',
-      // yoyo: true,
       ease: 'linear'
     });
-    // tlTemp2.to('.aiguille__seconde',{
-    //   duration: 1.5,
-    //   repeat: -1,
-    //   rotation: '-5deg',
-    //   yoyo: true,
-    //   ease:"sine.inOut"
-    // });
+    tlTemp2.to('.aiguille__minutes',{
+      duration: 12,
+      repeat: -1,
+      rotation: '360deg',
+      ease: 'linear'
+    });
+    tlTemp2.to('.aiguille__heures',{
+      duration: 144,
+      repeat: -1,
+      rotation: '360deg',
+      ease: 'linear'
+    });
+}
+btnHorloge.addEventListener('click', (e) => {
+  horaire();
+});
+
+
+
+
+
+/*----- Annimation température -----*/
+let btnClosed = document.querySelector('.btn--closed');
+function closed() {
+const tlTemp = gsap.timeline({});
+    tlTemp.set('.pancarte',{
+      scale: 10,  
+    });
+    tlTemp.to('.pancarte',{
+      scale: 1, 
+      duration: 2, 
+      ease: 'linear'
+    });
+}
+
+btnClosed.addEventListener('click', (e) => {
+  closed();
+});
+
+
+
+
+
+
 
 /*--------------------------------------------*/
 /*----- FUNCTION SOUND -----*/
@@ -910,7 +985,7 @@ let son = document.querySelectorAll('.son');
 let btnStylesCharbon = document.querySelector('.btn--stylesCharbon');
 let btnMineur = document.querySelector('.btn--mineur');
 let btnVisiteMine = document.querySelector('.btn--visiteMine');
-let btnAeration = document.querySelector('.btn--aeration');
+
 let sonPlay = document.querySelectorAll('.son--play');
 let sonStop = document.querySelectorAll('.son--stop');
 

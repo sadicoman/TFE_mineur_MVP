@@ -284,6 +284,31 @@ filter: blur(1px);
     transform: rotate(0.01turn) translateY(-30px) translateX(35px);
 }
 
+.closed{
+	background: url(../images/roton.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: auto;
+	min-height: 300px;
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+/* Css pour le retina @2x ici */
+.closed{
+	background: url(../images/roton@2x.png);
+}
+}
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 768px) {
 	.btn--espace{
 		margin-bottom: 0px;
@@ -359,7 +384,6 @@ filter: blur(1px);
 	.son{
 		align-self: center;
 	}
-	
 }
 
 
