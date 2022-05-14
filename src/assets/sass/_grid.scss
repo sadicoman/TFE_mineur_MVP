@@ -209,8 +209,14 @@
     .pgridRow-end2{
         grid-row-end: 2;
     }
+    .pgridRow-end5{
+        grid-row-end: 5;
+    }
     .pgridRow-start2{
         grid-row-start: 2;
+    }
+    .pgridRow-start3{
+        grid-row-start: 3;
     }
 }
 
@@ -219,10 +225,10 @@
 	.btn__container--aerage{
         align-self: center;
         padding-bottom: 0px;
-        margin-top: 180px;
+        margin-top: 218px;
     }
     .btn__container{
-        padding-bottom: 65px;
+        padding-bottom: 80px;
     }
 }
 

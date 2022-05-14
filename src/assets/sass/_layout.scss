@@ -301,7 +301,9 @@ filter: blur(1px);
 }
 }
 
-
+.fermetureMine__div > *, .horaireTravail__div > *{
+    margin-top: 1em;
+}
 
 
 
@@ -398,12 +400,18 @@ filter: blur(1px);
 		max-height: 400px;
 		width: auto;
 	}
-	.mine, .aerage, .geologie--svg, .horloge--svg{
+	.mine, .aerage, .geologie--svg, .horloge--svg, .closed--svg {
 		max-height: 550px;
 		width: auto;
 	}
+	.closed--svg {
+		width: 100%;
+	}
 	.horloge--svg{
 		justify-self: center;
+	}
+	.btn--charby{
+		padding-top: 2.2em;
 	}
 }
 

@@ -188,6 +188,11 @@ for(let i = 0 ; i < navEl.length ; i++){
       geo();
     }else if(loc == 'horaireTravail'){
       horaire();
+      mySound = new Sound("assets/son/CLOCKTick.mp3");
+      document.querySelector('.myAudio').volume = 0.5;
+      if(sonStopped == false){
+        mySound.play();
+      }
     }else if(loc == 'fermetureMine'){
       closed();
     }
@@ -849,10 +854,7 @@ btnGeo.addEventListener('click', (e) => {
 
 
 
-/*----- Annimation température -----*/
-
-
-
+/*----- Annimation Horloge -----*/
 
 let btnHorloge = document.querySelector('.btn--horloge');
 function horaire() {
@@ -861,14 +863,14 @@ tlTemp.set('.pandule',{
     transformOrigin: 'top center'
   });
   tlTemp.to('.pandule',{
-    duration: 1.5,
+    duration: 0.5,
     repeat: -1,
     rotation: '5deg',
     yoyo: true,
     ease:"sine.inOut"
   });
   tlTemp.to('.pandule',{
-    duration: 1.5,
+    duration: 0.5,
     repeat: -1,
     rotation: '-5deg',
     yoyo: true,
@@ -878,15 +880,19 @@ tlTemp.set('.pandule',{
   const tlTemp2 = gsap.timeline({});
   tlTemp.set('.aiguille__seconde',{
       // transformOrigin: 'bottom center',
-      transformOrigin: '50% 95%',
+      // opacity: 0,
+      // transformOrigin: '50% 95%',
       y: 0,
       x:0
     });
     tlTemp.set('.aiguille__minutes',{
       // transformOrigin: 'bottom center',
-      transformOrigin: '50% 95%',
-      y: 18,
-      x:42
+      // opacity: 0,
+      // transformOrigin: '50% 95%',
+      // y: 18,
+      // x:42
+      // y: 0,
+      // x:0
     });
     tlTemp.set('.aiguille__heures',{
       // transformOrigin: 'bottom center',
@@ -894,13 +900,27 @@ tlTemp.set('.pandule',{
       y: 0,
       x:0
     });
+    // tlTemp2.to('.aiguille__seconde',{
+    //   duration: 0.5,
+    //   opacity: 1,
+    //   ease: 'linear'
+    // });
+    // tlTemp2.to('.aiguille__minutes',{
+    //   duration: 0.5,
+    //   opacity: 1,
+    //   ease: 'linear'
+    // });
     tlTemp2.to('.aiguille__seconde',{
+      transformOrigin: '50% 95%',
+      // opacity: 1,
       duration: 1,
       repeat: -1,
       rotation: '360deg',
       ease: 'linear'
     });
     tlTemp2.to('.aiguille__minutes',{
+      transformOrigin: '50% 95%',
+      // opacity: 1,
       duration: 12,
       repeat: -1,
       rotation: '360deg',
@@ -915,22 +935,24 @@ tlTemp.set('.pandule',{
 }
 btnHorloge.addEventListener('click', (e) => {
   horaire();
+
 });
 
 
 
 
 
-/*----- Annimation température -----*/
+/*----- Annimation pancarte -----*/
 let btnClosed = document.querySelector('.btn--closed');
 function closed() {
 const tlTemp = gsap.timeline({});
     tlTemp.set('.pancarte',{
+      transformOrigin: 'center top',
       scale: 10,  
     });
     tlTemp.to('.pancarte',{
       scale: 1, 
-      duration: 2, 
+      duration: 0.3, 
       ease: 'linear'
     });
 }
@@ -1065,7 +1087,14 @@ btnTemperature.addEventListener('click', (e) => {
   mySound.remove();
 });
 
-
+btnHorloge.addEventListener('click', (e) => {
+  mySound.remove();
+  mySound = new Sound("assets/son/CLOCKTick.mp3");
+  document.querySelector('.myAudio').volume = 0.5;
+  if(sonStopped == false){
+    mySound.play();
+  }
+});
 
 
 
