@@ -74,10 +74,15 @@
 .mgridRow-start{
     grid-row-start: 1;
 }
+.mgridRow-start4{
+    grid-row-start: 4;
+}
 .mgridRow-end3{
     grid-row-end: 3;
 }
-
+.mgridRow-end6{
+    grid-row-end: 6;
+}
 
 @media screen and (min-width: 768px) {
     .grid {

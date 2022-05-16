@@ -935,7 +935,6 @@ tlTemp.set('.pandule',{
 }
 btnHorloge.addEventListener('click', (e) => {
   horaire();
-
 });
 
 
@@ -1096,6 +1095,10 @@ btnHorloge.addEventListener('click', (e) => {
   }
 });
 
+//ici
+btnClosed.addEventListener('click', (e) => {
+  mySound.remove();
+});
 
 
 
