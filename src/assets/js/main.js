@@ -187,7 +187,7 @@ for(let i = 0 ; i < navEl.length ; i++){
     }else if(loc == 'geologie'){
       geo();
     }else if(loc == 'horaireTravail'){
-      horaire();
+      // horaire();
       mySound = new Sound("assets/son/CLOCKTick.mp3");
       document.querySelector('.myAudio').volume = 0.5;
       if(sonStopped == false){
@@ -196,8 +196,6 @@ for(let i = 0 ; i < navEl.length ; i++){
     }else if(loc == 'fermetureMine'){
       closed();
     }
-
-
     tlShowText.set(elNext,{
       transform: 'translateX(150px)'
     })
@@ -206,7 +204,6 @@ for(let i = 0 ; i < navEl.length ; i++){
       opacity: 1,
       transform: 'translateX(0px)'
     }); 
-    
   });
 }
     
@@ -626,6 +623,7 @@ const tlDia = gsap.timeline({});
 
 /*----- Annimation température -----*/
 let btnTemperature = document.querySelector('.btn--temperature');
+let btnGeo = document.querySelector('.btn--geologie');
 function temperature() {
 const tlTemp = gsap.timeline({});
     tlTemp.set('.temperature-1',{
@@ -658,9 +656,12 @@ const tlTemp = gsap.timeline({});
     tlTemp.set('.temperature-txt-5',{
       opacity: 0
     });
+    tlTemp.set('.btn__geologie',{
+      opacity: 0
+    });
     tlTemp.to('.temperature-1',{
       opacity: 1,
-      duration: 1, 
+      duration: 0.7, 
       delay: 0.5, 
       ease: 'linear'
     });
@@ -671,7 +672,7 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-2',{
         opacity: 1,
-        duration: 1, 
+        duration: 0.7, 
         delay: 1, 
         ease: 'linear',
     });
@@ -682,7 +683,7 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-3',{
       opacity: 1,
-      duration: 1, 
+      duration: 0.7, 
       delay: 1, 
       ease: 'linear'
     });
@@ -693,7 +694,7 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-4',{
       opacity: 1,
-      duration: 1, 
+      duration: 0.7, 
       delay: 1, 
       ease: 'linear'
     });
@@ -704,11 +705,16 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-5',{
       opacity: 1,
-      duration: 1, 
+      duration: 0.7, 
       delay: 1, 
       ease: 'linear'
     });
     tlTemp.to('.temperature-txt-5',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('.btn__geologie',{
       opacity: 1,
       duration: 0.25, 
       ease: 'linear'
@@ -721,9 +727,8 @@ btnTemperature.addEventListener('click', (e) => {
 /*--------------------------------------------*/
 
 
-
-/*----- Annimation température -----*/
-let btnGeo = document.querySelector('.btn--geologie');
+//ici couches
+/*----- Annimation couches -----*/
 function geo() {
 const tlTemp = gsap.timeline({});
     tlTemp.set('#geo-1',{
@@ -768,9 +773,12 @@ const tlTemp = gsap.timeline({});
     tlTemp.set('#geo-txt-7',{
       opacity: 0
     });
+    tlTemp.set('.btn__horloge',{
+      opacity: 0
+    });
     tlTemp.to('#geo-1',{
       opacity: 1,
-      duration: 1, 
+      duration: 0.7, 
       delay: 0.5, 
       ease: 'linear'
     });
@@ -781,8 +789,8 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('#geo-2',{
         opacity: 1,
-        duration: 1, 
-        delay: 1, 
+        duration: 0.7, 
+        delay: 0.5, 
         ease: 'linear',
     });
     tlTemp.to('#geo-txt-2',{
@@ -792,8 +800,8 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('#geo-3',{
       opacity: 1,
-      duration: 1, 
-      delay: 1, 
+      duration: 0.7, 
+      delay: 0.5, 
       ease: 'linear'
     });
     tlTemp.to('#geo-txt-3',{
@@ -803,8 +811,8 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('#geo-4',{
       opacity: 1,
-      duration: 1, 
-      delay: 1, 
+      duration: 0.7, 
+      delay: 0.5, 
       ease: 'linear'
     });
     tlTemp.to('#geo-txt-4',{
@@ -814,8 +822,8 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('#geo-5',{
       opacity: 1,
-      duration: 1, 
-      delay: 1, 
+      duration: 0.7, 
+      delay: 0.5, 
       ease: 'linear'
     });
     tlTemp.to('#geo-txt-5',{
@@ -825,8 +833,8 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('#geo-6',{
       opacity: 1,
-      duration: 1, 
-      delay: 1, 
+      duration: 0.7, 
+      delay: 0.5, 
       ease: 'linear'
     });
     tlTemp.to('#geo-txt-6',{
@@ -836,11 +844,16 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('#geo-7',{
       opacity: 1,
-      duration: 1, 
-      delay: 1, 
+      duration: 0.7, 
+      delay: 0.5, 
       ease: 'linear'
     });
     tlTemp.to('#geo-txt-7',{
+      opacity: 1,
+      duration: 0.25, 
+      ease: 'linear'
+    });
+    tlTemp.to('.btn__horloge',{
       opacity: 1,
       duration: 0.25, 
       ease: 'linear'
@@ -933,9 +946,10 @@ tlTemp.set('.pandule',{
       ease: 'linear'
     });
 }
-btnHorloge.addEventListener('click', (e) => {
-  horaire();
-});
+horaire();
+// btnHorloge.addEventListener('click', (e) => {
+//   horaire();
+// });
 
 
 
@@ -947,11 +961,14 @@ function closed() {
 const tlTemp = gsap.timeline({});
     tlTemp.set('.pancarte',{
       transformOrigin: 'center top',
+      opacity: 0,
       scale: 10,  
     });
     tlTemp.to('.pancarte',{
+      opacity: 1,
       scale: 1, 
       duration: 0.3, 
+      delay: 1.5, 
       ease: 'linear'
     });
 }
