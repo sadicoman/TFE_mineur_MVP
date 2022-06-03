@@ -258,8 +258,8 @@ filter: blur(1px);
     background: #fff;
 }
 .section__div{
-	background-image: url("../images/Background_perso.png");
-	background-position: center;
+	background-image: url("../images/Background_perso2.png");
+	background-position: bottom;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -395,7 +395,7 @@ filter: blur(1px);
 		min-height: 415px;
 	}
 	.pg__creaCharbon{
-        width: 70%;
+        width: 80%;
 		min-height: 63px;
         
     }
@@ -412,10 +412,13 @@ filter: blur(1px);
 		display: none;
 	}
 	.main, .header{
-		max-width: 1400px;
+		max-width: 1050px;
 		margin: auto;
 		padding: 0px 10px;
 	}	
+	.styleCharbon__svg{
+		width: 100%;
+	}
 	.logo--dwt {
 		width: 30%;
 	}
@@ -440,7 +443,7 @@ filter: blur(1px);
 	// 	max-height: 750px;
 	// }
 	.styleCharbon__el{
-		min-height: 486px;
+		min-height: 523px;
 	}
 	.son{
 		align-self: center;
@@ -471,6 +474,16 @@ filter: blur(1px);
 	}
 	.btn--charby{
 		padding-top: 2.2em;
+	}
+	.btn--type{
+		margin-top: -26px;
+	}
+	.btn__container--bottom{
+		margin-bottom: -20px;
+		align-self: center;
+	}
+	.btn--haut{
+		margin-top: 160px;
 	}
 }
 

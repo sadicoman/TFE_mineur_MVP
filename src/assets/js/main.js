@@ -445,8 +445,8 @@ let charbonIndex = 0;
 
 // suivant
 btnSuivantCharbon.addEventListener('click', (e) => {
-    styleCharbon[charbonIndex].classList.add('hidden');
-    styleCharbon[charbonIndex + 1].classList.remove('hidden');
+    styleCharbon[charbonIndex].classList.add('styleCharbon__el--hidden');
+    styleCharbon[charbonIndex + 1].classList.remove('styleCharbon__el--hidden');
     btnAvantCharbon.classList.remove('hidden');
     charbonIndex++;
     if(charbonIndex == styleCharbon.length - 1){
@@ -458,8 +458,8 @@ btnSuivantCharbon.addEventListener('click', (e) => {
 
 // Arriere
 btnAvantCharbon.addEventListener('click', (e) => {
-  styleCharbon[charbonIndex].classList.add('hidden');
-  styleCharbon[charbonIndex - 1].classList.remove('hidden');
+  styleCharbon[charbonIndex].classList.add('styleCharbon__el--hidden');
+  styleCharbon[charbonIndex - 1].classList.remove('styleCharbon__el--hidden');
   btnSwap2.classList.add('hidden');
   if(btnSuivantCharbon.classList.contains('hidden')){
     btnSuivantCharbon.classList.remove('hidden');
@@ -661,7 +661,7 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-1',{
       opacity: 1,
-      duration: 0.7, 
+      duration: 0.5, 
       delay: 0.5, 
       ease: 'linear'
     });
@@ -672,7 +672,7 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-2',{
         opacity: 1,
-        duration: 0.7, 
+        duration: 0.5, 
         delay: 1, 
         ease: 'linear',
     });
@@ -683,7 +683,7 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-3',{
       opacity: 1,
-      duration: 0.7, 
+      duration: 0.5, 
       delay: 1, 
       ease: 'linear'
     });
@@ -694,7 +694,7 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-4',{
       opacity: 1,
-      duration: 0.7, 
+      duration: 0.5, 
       delay: 1, 
       ease: 'linear'
     });
@@ -705,7 +705,7 @@ const tlTemp = gsap.timeline({});
     });
     tlTemp.to('.temperature-5',{
       opacity: 1,
-      duration: 0.7, 
+      duration: 0.5, 
       delay: 1, 
       ease: 'linear'
     });
