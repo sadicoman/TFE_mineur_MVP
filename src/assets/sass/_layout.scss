@@ -367,6 +367,23 @@ filter: blur(1px);
 	padding-bottom: 1em;
 }
 
+.picto--avatar{
+	width: 30%;
+}
+.bulle__container{
+	display: flex;
+	justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.bulle--index, .txt--index, .personnage--index{
+position: absolute;
+z-index: 10;
+}
+
+
+
+
 
 
 
@@ -427,6 +444,9 @@ filter: blur(1px);
 		width: 40%;
 		padding-left: 15px;
 	}
+	.bulle--grand{
+		width: 80%;
+	}
 	.bulle__content{
 		margin-top: 1.5em;;
 	}
@@ -462,12 +482,14 @@ filter: blur(1px);
 		max-height: 400px;
 		width: auto;
 	}
-	.mine, .aerage, .geologie--svg, .horloge--svg, .closed--svg {
+	.mine, .aerage, .geologie--svg, .horloge--svg{
 		max-height: 550px;
 		width: auto;
 	}
 	.closed--svg {
 		width: 100%;
+		max-height: 540px;
+		
 	}
 	.horloge--svg{
 		justify-self: center;
