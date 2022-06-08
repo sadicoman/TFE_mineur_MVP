@@ -126,7 +126,7 @@ body[data-menu] .header__img{
 	position: relative;
 }
 .btn__el{
-	margin-top: 18px;
+	// margin-top: 18px;
     background-color: var(--color-primary);
 	color: var(--color-on-primary);
 	border: none;
@@ -154,19 +154,34 @@ body[data-menu] .header__img{
 	padding-left: 15px;
 }
 .btn__el--haut:hover, .btn__el--haut:focus{
+	// transform: translate(10px, 10px);
+	// background-color: var(--color-secondary);
+	// color: var(--color-on-secondary);
+	// transition-duration: .2s;
+	// transition-timing-function: ease-out;
+	
+}
+
+.btnHover{
 	transform: translate(10px, 10px);
 	background-color: var(--color-secondary);
 	color: var(--color-on-secondary);
 	transition-duration: .2s;
 	transition-timing-function: ease-out;
-	
 	.btn__span--icone:after {
 		content: url(../images/pioche_hover.png);
 	}
 }
+.btnOut{
+	// transform: translate(-10px, -10px);
+	background-color: var(--color-primary);
+	color: var(--color-on-primary);
+	transition-duration: .2s;
+	transition-timing-function: ease-out;
+}
 .btn__el--bas{
 	position: absolute;
-	margin-top: 18px;
+	// margin-top: 18px;
 	background-color: var(--color-secondary);
 	// width: 215px;
 	// height: 37px;
@@ -174,6 +189,13 @@ body[data-menu] .header__img{
 	left: 10px;
 	border-radius: 15px;
 } 
+.btn__container{
+	height: 84px;
+	width: 290px;
+}
+.btn__container:hover{
+	cursor: pointer;
+}
 .btn__container--fleche{
 	position: relative;
 }
@@ -181,12 +203,14 @@ body[data-menu] .header__img{
 	// position: absolute;
 	position: absolute;
 	z-index: 10;
+	cursor: pointer;
 }
 .btn__fleche--orange{
 	stroke: var(--color-secondary);
 	position: absolute;
 	top: 10px;
 	left: 10px;
+	cursor: pointer;
 }
 .styleCharbon{
 	max-width: 800px;
@@ -381,7 +405,9 @@ position: absolute;
 z-index: 10;
 }
 
-
+.section__fleche{
+	justify-self: center;
+}
 
 
 

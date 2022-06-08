@@ -220,9 +220,56 @@ for(let i = 0 ; i < navEl.length ; i++){
 
 
 /*----- Btn -----*/
+let btnContainer = document.querySelectorAll(".btn__container");
 let btnTaille = document.querySelectorAll(".btn");
 let btnTailleHaut = document.querySelectorAll(".btn__el--haut");
 let btnTailleBas = document.querySelectorAll(".btn__el--bas");
+
+for(let i = 0 ; i < btnContainer.length ; i++){
+  btnContainer[i].addEventListener('mouseover', (e) =>{
+    btnTailleHaut[i].classList.add('btnHover');
+    btnTailleHaut[i].classList.remove('btnOut');
+  });
+}
+
+for(let i = 0 ; i < btnContainer.length ; i++){
+  btnContainer[i].addEventListener('mouseout', (e) =>{
+    btnTailleHaut[i].classList.add('btnOut');
+    btnTailleHaut[i].classList.remove('btnHover');
+  });
+}
+
+let btnFlecheAvant = document.querySelectorAll('.btnAvant');
+let btnFlecheSuivant = document.querySelectorAll('.btnSuivant');
+let btnGauche = document.querySelectorAll('.btn__fleche--gauche');
+let btnDroite = document.querySelectorAll('.btn__fleche--droite');
+
+for(let i = 0 ; i < btnFlecheSuivant.length ; i++){
+  btnFlecheSuivant[i].addEventListener('mouseover', (e) =>{
+    btnDroite[i].classList.add('btn__fleche--hover');
+    btnDroite[i].classList.remove('btn__fleche--out');
+  });
+}
+for(let i = 0 ; i < btnFlecheSuivant.length ; i++){
+  btnFlecheSuivant[i].addEventListener('mouseout', (e) =>{
+    btnDroite[i].classList.add('btn__fleche--out');
+    btnDroite[i].classList.remove('btn__fleche--hover');
+  });
+}
+
+for(let i = 0 ; i < btnFlecheAvant.length ; i++){
+  btnFlecheAvant[i].addEventListener('mouseover', (e) =>{
+    btnGauche[i].classList.add('btn__fleche--hover2');
+    btnGauche[i].classList.remove('btn__fleche--out2');
+  });
+}
+for(let i = 0 ; i < btnFlecheAvant.length ; i++){
+  btnFlecheAvant[i].addEventListener('mouseout', (e) =>{
+    btnGauche[i].classList.add('btn__fleche--out2');
+    btnGauche[i].classList.remove('btn__fleche--hover2');
+  });
+}
+
 
 function updateStyleBtn(){
   for(let i = 0 ; i < btnTaille.length ; i++){ 

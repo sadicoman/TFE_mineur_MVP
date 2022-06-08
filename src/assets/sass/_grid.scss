@@ -16,21 +16,34 @@
     border: inherit;
     cursor: pointer; 
 }
-.btn__fleche:hover{
+// .btn__fleche:hover{
+.btn__fleche--hover{
     cursor: pointer;
-    .btn__fleche--hover{
-        transform: translate(4px, 4px);
-        stroke: var(--color-secondary);
-        transition-duration: .2s;
-        transition-timing-function: ease-out;
-    }
-    .btn__fleche--hover2{
-        transform: translate(-4px, 4px);
-        stroke: var(--color-secondary);
-        transition-duration: .2s;
-        transition-timing-function: ease-out;
-    }
+    transform: translate(4px, 4px);
+    stroke: var(--color-secondary);
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
 }
+.btn__fleche--out{
+    cursor:pointer;
+    stroke: var(--color-primary);
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+}
+.btn__fleche--hover2{
+    cursor: pointer;
+    transform: translate(-4px, 4px);
+    stroke: var(--color-secondary);
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+}
+.btn__fleche--out2{
+    cursor:pointer;
+    stroke: var(--color-primary);
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+}
+// }
 .btn__fleche--hover, .header__logo, .header__img{
     cursor: pointer;  
 }
@@ -166,7 +179,7 @@
     }
     .btn__container{
         // align-self: center;
-        padding-bottom: 20px;
+        // padding-bottom: 20px;
     }
     // .main{
     //     display: grid;
