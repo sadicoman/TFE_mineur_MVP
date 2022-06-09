@@ -239,6 +239,8 @@ for(let i = 0 ; i < btnContainer.length ; i++){
   });
 }
 
+
+
 let btnFlecheAvant = document.querySelectorAll('.btnAvant');
 let btnFlecheSuivant = document.querySelectorAll('.btnSuivant');
 let btnGauche = document.querySelectorAll('.btn__fleche--gauche');
@@ -271,6 +273,7 @@ for(let i = 0 ; i < btnFlecheAvant.length ; i++){
 }
 
 
+
 function updateStyleBtn(){
   for(let i = 0 ; i < btnTaille.length ; i++){ 
     // .length => nombre d'éléments dans le tableau "btnTaille"
@@ -282,6 +285,7 @@ function updateStyleBtn(){
     
     btnTailleBas[i].style.width = btnWidth+"px";
     btnTailleBas[i].style.height = btnHeight+"px";
+
   };
 }
 

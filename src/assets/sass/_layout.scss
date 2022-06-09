@@ -193,6 +193,24 @@ body[data-menu] .header__img{
 	height: 84px;
 	width: 290px;
 }
+.btn__container--type{
+	width: 333px;
+}
+.btn__container--aeration{
+	padding-top: 30px;
+}
+.btn__container--aerage{
+	width: 400px;
+	padding-top: 30px;
+}
+.btn__container--temps{
+	width: 390px;
+	margin-top: 30px;
+}
+.btn__container--fermeture{
+	width: 390px;
+}
+
 .btn__container:hover{
 	cursor: pointer;
 }
@@ -546,7 +564,7 @@ filter: blur(1px);
 		padding-top: 2.2em;
 	}
 	.btn--type{
-		margin-top: -26px;
+		margin-top: -5px;
 	}
 	.btn__container--bottom{
 		margin-bottom: -20px;
