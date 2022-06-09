@@ -194,7 +194,7 @@ for(let i = 0 ; i < navEl.length ; i++){
         mySound.play();
       }
     }else if(loc == 'fermetureMine'){
-      closed();
+      // closed();
     }
     tlShowText.set(elNext,{
       transform: 'translateX(150px)'
@@ -1004,25 +1004,25 @@ horaire();
 
 /*----- Annimation pancarte -----*/
 let btnClosed = document.querySelector('.btn--closed');
-function closed() {
-const tlTemp = gsap.timeline({});
-    tlTemp.set('.pancarte',{
-      transformOrigin: 'center top',
-      opacity: 0,
-      scale: 10,  
-    });
-    tlTemp.to('.pancarte',{
-      opacity: 1,
-      scale: 1, 
-      duration: 0.3, 
-      delay: 1.5, 
-      ease: 'linear'
-    });
-}
+// function closed() {
+// const tlTemp = gsap.timeline({});
+//     tlTemp.set('.pancarte',{
+//       transformOrigin: 'center top',
+//       opacity: 0,
+//       scale: 10,  
+//     });
+//     tlTemp.to('.pancarte',{
+//       opacity: 1,
+//       scale: 1, 
+//       duration: 0.3, 
+//       delay: 1.5, 
+//       ease: 'linear'
+//     });
+// }
 
-btnClosed.addEventListener('click', (e) => {
-  closed();
-});
+// btnClosed.addEventListener('click', (e) => {
+//   closed();
+// });
 
 
 
