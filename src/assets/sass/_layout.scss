@@ -193,6 +193,9 @@ body[data-menu] .header__img{
 	height: 84px;
 	width: 290px;
 }
+.btn__container--style{
+	width: 90%;
+}
 .btn__container--type{
 	width: 333px;
 }
@@ -200,7 +203,7 @@ body[data-menu] .header__img{
 	padding-top: 30px;
 }
 .btn__container--aerage{
-	width: 400px;
+	width: auto;
 	padding-top: 30px;
 }
 .btn__container--temps{
@@ -208,7 +211,7 @@ body[data-menu] .header__img{
 	margin-top: 30px;
 }
 .btn__container--fermeture{
-	width: 390px;
+	width:auto;
 }
 
 .btn__container:hover{
@@ -482,6 +485,17 @@ filter: blur(1px);
 		min-height: 63px;
         
     }
+	.btn__container--style{
+		height: 84px;
+		width: 290px;
+	}
+	.btn__container--aerage{
+		width: 400px;
+		padding-top: 30px;
+	}
+	.btn__container--fermeture{
+		width: 390px;
+	}
 }
 
 @media screen and (min-width: 1440px) {
@@ -561,7 +575,7 @@ filter: blur(1px);
 		justify-self: center;
 	}
 	.btn--charby{
-		padding-top: 2.2em;
+		padding-top: 3.4em;
 	}
 	.btn--type{
 		margin-top: -5px;
