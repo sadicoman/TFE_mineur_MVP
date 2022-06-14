@@ -20,15 +20,18 @@
 
 .lien{
     text-decoration: none; 
-    color: #000;
+    color: var(--color-primary);
 }
 .lien:visited{
     color: var(--color-primary-visited);
 }
 .lien:hover, .lien:focus{
-    color: var(--color-primary-hover-variant);
+    color: var(--color-secondary);
 }
-
+.lien--dwt{
+    font-size: 14px;
+    padding-top: 15px;
+}
 
 /*********** SCROL BAR + SELECTION TEXT ***********/
 *::selection {
